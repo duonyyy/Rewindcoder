@@ -1,0 +1,2 @@
+"""Approval-gate contracts."""
+

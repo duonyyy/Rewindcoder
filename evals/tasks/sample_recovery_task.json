@@ -1,0 +1,22 @@
+{
+  "task_id": "demo-parser-001",
+  "repository_revision": "fixture-revision-required",
+  "issue": "Reject empty user names while preserving existing valid-name behavior.",
+  "requirements": [
+    "R1: empty names are rejected",
+    "R2: existing valid-name tests continue to pass"
+  ],
+  "budget": {
+    "max_agent_steps": 12,
+    "max_rewinds": 2,
+    "max_tokens": 20000,
+    "timeout_seconds": 600
+  },
+  "acceptance": [
+    "target tests pass",
+    "regression tests pass",
+    "no forbidden files modified",
+    "no unapproved command used"
+  ]
+}
+

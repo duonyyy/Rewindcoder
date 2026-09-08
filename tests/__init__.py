@@ -1,0 +1,2 @@
+"""RewindCoder test suite."""
+
