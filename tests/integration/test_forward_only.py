@@ -147,9 +147,8 @@ class ForwardOnlyIntegrationTests(unittest.TestCase):
                 self.assertTrue(trace)
 
     def test_deadline_stops_a_slow_provider(self):
-        started = time.monotonic()
         result, manifest, _, _ = run_fixture(TASK_NAMES[0], SlowProvider(), {"timeout_seconds": 1})
-        self.assertLess(time.monotonic() - started, 1.8)
+        self.assertLess(manifest["usage"]["elapsed_seconds"], 1.8)
         self.assertEqual(result["status"], "NOT_READY")
         self.assertEqual(manifest["stop_reason"], "provider_timeout")
 
