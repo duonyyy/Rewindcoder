@@ -6,8 +6,9 @@ repository checkpoints, recording why the previous strategy failed, and
 producing an alternative plan.
 
 **Release status: Phase 5 / v1.0 NOT_READY.** A six-policy offline fixture
-smoke matrix and validator are available, but the main task set, sandbox,
-live provider and fresh-clone source revision are not yet verified. See
+smoke matrix and validator are available, but the main task set, sandbox and
+live provider are not yet available. The source and fixture evidence passed a
+fresh-clone check. See
 [Phase 5 gate report](docs/phase-5-gate-report.md) and
 [limitations](docs/limitations.md).
 
@@ -96,7 +97,7 @@ provider and one parser fixture establish workflow evidence only; see
 
 ## Phase 5 fixture smoke and replay
 
-From this working tree with Python 3.13.2 and Git 2.47.0.windows.2:
+From the repository root with Python 3.13.2 and Git 2.47.0.windows.2:
 
 ```powershell
 $env:PYTHONPATH='src'

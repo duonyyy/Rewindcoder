@@ -3,7 +3,7 @@
 Observed environment on 2026-10-16: Windows, Python `3.13.2`, Git
 `2.47.0.windows.2`. The source execution path uses the Python standard library;
 `setuptools>=68` is only a build requirement in `pyproject.toml`. Run from this
-working tree without package installation:
+checkout without package installation:
 
 ```powershell
 $env:PYTHONPATH='src'
@@ -25,8 +25,9 @@ hashes. Raw `v1`–`v4` runner-development artifacts are retained but excluded f
 the `v5` summary. The raw `v5` tree and summary must be copied with the exact
 source state if the experiment is moved to another machine.
 
-This is an environment recipe, not a fresh-clone guarantee. The working tree
-contains Phase 2–5 code absent from HEAD; a fresh clone of HEAD lacks this
-runner. Docker Engine was not available, so there is no verified container
-image or arbitrary-repository sandbox. A source revision and clean-clone run
-are release gates, not properties inferred from a source hash.
+The source commit `53bf579e41d7fcbfcaaa7c76270dfe86cb5953d3` was cloned
+into a new directory on Windows. In that clone, preflight passed for all three
+fixtures, the full suite ran 58 tests with one Windows symlink-permission skip,
+and the saved Phase 5 matrix validated 18/18 cells. The later report-only
+commit does not change source or fixture bytes. Docker Engine was unavailable,
+so there is no verified container image or arbitrary-repository sandbox.
