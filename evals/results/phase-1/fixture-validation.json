@@ -1,0 +1,38 @@
+{
+  "fixtures": {
+    "demo-parser-001": {
+      "base_commit_expected": "704e442013b980e52ecb23e9e75ac9ee1dcfe48c",
+      "base_commit_first": "704e442013b980e52ecb23e9e75ac9ee1dcfe48c",
+      "base_commit_second": "704e442013b980e52ecb23e9e75ac9ee1dcfe48c",
+      "base_target_passed": false,
+      "base_regression_passed": true,
+      "gold_target_passed": true,
+      "gold_regression_passed": true,
+      "forbidden_edit_detected": true,
+      "passed": true
+    },
+    "tsv-whitespace-002": {
+      "base_commit_expected": "0b51d8d83af987a08654469016e5405423866c0a",
+      "base_commit_first": "0b51d8d83af987a08654469016e5405423866c0a",
+      "base_commit_second": "0b51d8d83af987a08654469016e5405423866c0a",
+      "base_target_passed": false,
+      "base_regression_passed": true,
+      "gold_target_passed": true,
+      "gold_regression_passed": true,
+      "forbidden_edit_detected": true,
+      "passed": true
+    },
+    "adapter-service-003": {
+      "base_commit_expected": "f260333d5fe5fba4f36776d8ee3bf9d658fecf5d",
+      "base_commit_first": "f260333d5fe5fba4f36776d8ee3bf9d658fecf5d",
+      "base_commit_second": "f260333d5fe5fba4f36776d8ee3bf9d658fecf5d",
+      "base_target_passed": false,
+      "base_regression_passed": true,
+      "gold_target_passed": true,
+      "gold_regression_passed": true,
+      "forbidden_edit_detected": true,
+      "passed": true
+    }
+  },
+  "passed": true
+}

@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://rewindcoder.dev/schemas/run-manifest/v1",
+  "title": "RewindCoder Run Manifest v1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "run_id", "task_id", "rewindcoder_commit", "fixture_base_commit", "python_version", "execution_mode", "test_commands", "test_results", "timestamp", "tool_policy_version", "status"],
+  "properties": {
+    "schema_version": {"const": "run-manifest/v1"},
+    "run_id": {"type": "string", "minLength": 1},
+    "task_id": {"type": "string", "minLength": 1},
+    "rewindcoder_commit": {"type": "string", "minLength": 1},
+    "fixture_base_commit": {"type": "string", "minLength": 1},
+    "python_version": {"type": "string", "minLength": 1},
+    "execution_mode": {"enum": ["STATIC", "LOCAL", "REFERENCE", "NOT_RUN"]},
+    "test_commands": {"type": "array", "items": {"type": "string", "minLength": 1}},
+    "test_results": {"type": "object"},
+    "timestamp": {"type": "string", "format": "date-time"},
+    "tool_policy_version": {"type": "string", "minLength": 1},
+    "status": {"enum": ["PASS", "FAIL", "NOT_RUN", "NOT_READY"]}
+  }
+}

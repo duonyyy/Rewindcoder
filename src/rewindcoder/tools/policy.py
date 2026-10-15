@@ -1,5 +1,9 @@
-"""A narrow command policy for controlled repositories."""
+"""Parsed, default-deny command policy for controlled repositories."""
 
+from __future__ import annotations
+
+import re
+import shlex
 from enum import StrEnum
 
 
@@ -9,15 +13,46 @@ class Permission(StrEnum):
     DENY = "deny"
 
 
-AUTO_COMMANDS = {"pytest", "python", "rg", "git diff", "git status"}
-APPROVAL_PREFIXES = {"pip install", "git reset", "rm", "del", "git push"}
+_DANGEROUS_TOKENS = (";", "&", "|", "`", "$(", ">", "<", "\n", "\r")
+_NETWORK_PROGRAMS = {"curl", "wget", "invoke-webrequest", "iwr", "ssh", "scp"}
+_APPROVAL_PROGRAMS = {"rm", "del", "remove-item", "rmdir", "pip", "npm"}
+
+
+def parse_command(command: str) -> list[str] | None:
+    normalized = command.strip()
+    if not normalized or any(token in normalized for token in _DANGEROUS_TOKENS):
+        return None
+    try:
+        return shlex.split(normalized, posix=False)
+    except ValueError:
+        return None
 
 
 def command_permission(command: str) -> Permission:
-    normalized = command.strip().lower()
-    if any(normalized.startswith(prefix) for prefix in APPROVAL_PREFIXES):
+    """Classify a single command without executing it.
+
+    Commands with chaining, network clients, unknown executables, or an
+    ambiguous parse fail closed. The caller must still enforce workspace paths
+    and timeouts before executing an AUTO command.
+    """
+
+    parts = parse_command(command)
+    if not parts:
+        return Permission.DENY
+    program = parts[0].lower()
+    if program in _NETWORK_PROGRAMS:
+        return Permission.DENY
+    if program in _APPROVAL_PROGRAMS:
         return Permission.APPROVAL
-    if any(normalized == item or normalized.startswith(f"{item} ") for item in AUTO_COMMANDS):
+    if program == "git":
+        if parts in (["git", "status"], ["git", "status", "--short"], ["git", "diff"], ["git", "diff", "--no-ext-diff"]):
+            return Permission.AUTO
+        return Permission.APPROVAL if len(parts) > 1 else Permission.DENY
+    if parts == ["pytest", "tests/unit"]:
+        return Permission.AUTO
+    if program == "python" and parts[1:3] == ["-m", "unittest"] and len(parts) == 4:
+        if re.fullmatch(r"tests\.test_[a-z_]+\.[A-Za-z][A-Za-z0-9_]*", parts[3]):
+            return Permission.AUTO
+    if program == "rg" and len(parts) in (2, 3) and all(not item.startswith("-") for item in parts[1:]):
         return Permission.AUTO
     return Permission.DENY
-

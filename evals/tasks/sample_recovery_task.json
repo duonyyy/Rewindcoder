@@ -1,22 +1,29 @@
 {
+  "schema_version": "task/v1",
   "task_id": "demo-parser-001",
-  "repository_revision": "fixture-revision-required",
+  "repository": {
+    "kind": "fixture",
+    "path": "evals/fixtures/parser-empty-name",
+    "base_commit": "704e442013b980e52ecb23e9e75ac9ee1dcfe48c"
+  },
   "issue": "Reject empty user names while preserving existing valid-name behavior.",
-  "requirements": [
+  "explicit_requirements": [
     "R1: empty names are rejected",
     "R2: existing valid-name tests continue to pass"
   ],
+  "target_commands": ["python -m unittest tests.test_parser.EmptyNameTests"],
+  "regression_commands": ["python -m unittest tests.test_parser.ValidNameTests"],
+  "forbidden_paths": [".git/", "README.md"],
   "budget": {
     "max_agent_steps": 12,
     "max_rewinds": 2,
     "max_tokens": 20000,
+    "max_tool_calls": 50,
     "timeout_seconds": 600
   },
-  "acceptance": [
-    "target tests pass",
-    "regression tests pass",
-    "no forbidden files modified",
-    "no unapproved command used"
-  ]
+  "evaluator_only": {
+    "hidden_requirements": ["Whitespace-only names are also rejected."],
+    "gold_patch": "evals/evaluator/parser-empty-name/src/parser.py",
+    "expected_outcome": {"target_tests": "PASS", "regression_tests": "PASS"}
+  }
 }
-

@@ -1,0 +1,12 @@
+{
+  "schema_version": "task/v1",
+  "task_id": "tsv-whitespace-002",
+  "repository": {"kind": "fixture", "path": "evals/fixtures/tsv-whitespace", "base_commit": "0b51d8d83af987a08654469016e5405423866c0a"},
+  "issue": "Preserve TSV cell whitespace while retaining CSV trimming behavior.",
+  "explicit_requirements": ["TSV preserves original cell text", "CSV still trims cells"],
+  "target_commands": ["python -m unittest tests.test_reader.TsvTests"],
+  "regression_commands": ["python -m unittest tests.test_reader.CsvTests"],
+  "forbidden_paths": [".git/", "README.md", "tests/"],
+  "budget": {"max_agent_steps": 12, "max_rewinds": 0, "max_tokens": 4000, "max_tool_calls": 50, "timeout_seconds": 60},
+  "evaluator_only": {"hidden_requirements": ["Do not alter CSV normalization."], "gold_patch": "evals/evaluator/tsv-whitespace/src/reader.py", "expected_outcome": {"target_tests": "PASS", "regression_tests": "PASS"}}
+}
