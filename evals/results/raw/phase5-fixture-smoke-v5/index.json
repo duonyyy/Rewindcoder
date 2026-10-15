@@ -1,0 +1,134 @@
+{
+  "schema_version": "evaluation-index/v1",
+  "protocol_sha256": "b7eca02e2af0c12a56125eff85b6ecb000533ba02aec117540cd612ea730f4b6",
+  "protocol_id": "phase5-fixture-smoke-v5",
+  "expected_cells": 18,
+  "cells": [
+    {
+      "task_id": "demo-parser-001",
+      "variant": "forward_only",
+      "seed": 0,
+      "state": "RECORDED",
+      "manifest": "demo-parser-001\\forward_only\\seed-0\\demo-parser-001\\run-99ce75da415a4083adc0684ad9f6f1be\\manifest.json"
+    },
+    {
+      "task_id": "demo-parser-001",
+      "variant": "retry_only",
+      "seed": 0,
+      "state": "RECORDED",
+      "manifest": "demo-parser-001\\retry_only\\seed-0\\demo-parser-001\\run-cb646049c8e243f8ab7dd0df12f9f73d\\manifest.json"
+    },
+    {
+      "task_id": "demo-parser-001",
+      "variant": "agent_state_rewind",
+      "seed": 0,
+      "state": "RECORDED",
+      "manifest": "demo-parser-001\\agent_state_rewind\\seed-0\\demo-parser-001\\run-1300e9f3fdf746149534ef41963f6aeb\\manifest.json"
+    },
+    {
+      "task_id": "demo-parser-001",
+      "variant": "repository_only_rewind",
+      "seed": 0,
+      "state": "RECORDED",
+      "manifest": "demo-parser-001\\repository_only_rewind\\seed-0\\demo-parser-001\\run-dfc1f41fdbb141ab84d27fd56375920c\\manifest.json"
+    },
+    {
+      "task_id": "demo-parser-001",
+      "variant": "aligned_no_memory",
+      "seed": 0,
+      "state": "RECORDED",
+      "manifest": "demo-parser-001\\aligned_no_memory\\seed-0\\demo-parser-001\\run-40357d48eac1466aa0bbb9d7e8a1cdd4\\manifest.json"
+    },
+    {
+      "task_id": "demo-parser-001",
+      "variant": "rewindcoder_full",
+      "seed": 0,
+      "state": "RECORDED",
+      "manifest": "demo-parser-001\\rewindcoder_full\\seed-0\\demo-parser-001\\run-939e8d88dddb4865bcf0dbaa5f3fd9dc\\manifest.json"
+    },
+    {
+      "task_id": "tsv-whitespace-002",
+      "variant": "forward_only",
+      "seed": 0,
+      "state": "RECORDED",
+      "manifest": "tsv-whitespace-002\\forward_only\\seed-0\\tsv-whitespace-002\\run-0a299296291445c389f4d1d4701c4ed7\\manifest.json"
+    },
+    {
+      "task_id": "tsv-whitespace-002",
+      "variant": "retry_only",
+      "seed": 0,
+      "state": "RECORDED",
+      "manifest": "tsv-whitespace-002\\retry_only\\seed-0\\tsv-whitespace-002\\run-04910355c5ea48f7b18e26408f534d28\\manifest.json"
+    },
+    {
+      "task_id": "tsv-whitespace-002",
+      "variant": "agent_state_rewind",
+      "seed": 0,
+      "state": "RECORDED",
+      "manifest": "tsv-whitespace-002\\agent_state_rewind\\seed-0\\tsv-whitespace-002\\run-d6041ee46c09410c8a5a57aca766d9d7\\manifest.json"
+    },
+    {
+      "task_id": "tsv-whitespace-002",
+      "variant": "repository_only_rewind",
+      "seed": 0,
+      "state": "RECORDED",
+      "manifest": "tsv-whitespace-002\\repository_only_rewind\\seed-0\\tsv-whitespace-002\\run-9b73797d23fd4e348c871c11bb340c58\\manifest.json"
+    },
+    {
+      "task_id": "tsv-whitespace-002",
+      "variant": "aligned_no_memory",
+      "seed": 0,
+      "state": "RECORDED",
+      "manifest": "tsv-whitespace-002\\aligned_no_memory\\seed-0\\tsv-whitespace-002\\run-25772fbb02ed44d3a902687372aae6de\\manifest.json"
+    },
+    {
+      "task_id": "tsv-whitespace-002",
+      "variant": "rewindcoder_full",
+      "seed": 0,
+      "state": "RECORDED",
+      "manifest": "tsv-whitespace-002\\rewindcoder_full\\seed-0\\tsv-whitespace-002\\run-2394eaf1b622468986a05dc953fa816c\\manifest.json"
+    },
+    {
+      "task_id": "adapter-service-003",
+      "variant": "forward_only",
+      "seed": 0,
+      "state": "RECORDED",
+      "manifest": "adapter-service-003\\forward_only\\seed-0\\adapter-service-003\\run-0329e176286047ffb6c6eb9de8a61908\\manifest.json"
+    },
+    {
+      "task_id": "adapter-service-003",
+      "variant": "retry_only",
+      "seed": 0,
+      "state": "RECORDED",
+      "manifest": "adapter-service-003\\retry_only\\seed-0\\adapter-service-003\\run-23791109dc194ff68a90a70cfd050d08\\manifest.json"
+    },
+    {
+      "task_id": "adapter-service-003",
+      "variant": "agent_state_rewind",
+      "seed": 0,
+      "state": "RECORDED",
+      "manifest": "adapter-service-003\\agent_state_rewind\\seed-0\\adapter-service-003\\run-bcce403626bd496b8d9e9a8ecc9fd677\\manifest.json"
+    },
+    {
+      "task_id": "adapter-service-003",
+      "variant": "repository_only_rewind",
+      "seed": 0,
+      "state": "RECORDED",
+      "manifest": "adapter-service-003\\repository_only_rewind\\seed-0\\adapter-service-003\\run-ae09c712469f4571a8f0eef935d782ef\\manifest.json"
+    },
+    {
+      "task_id": "adapter-service-003",
+      "variant": "aligned_no_memory",
+      "seed": 0,
+      "state": "RECORDED",
+      "manifest": "adapter-service-003\\aligned_no_memory\\seed-0\\adapter-service-003\\run-93c0c4b95d8e43f8a830b7e7d71eacfa\\manifest.json"
+    },
+    {
+      "task_id": "adapter-service-003",
+      "variant": "rewindcoder_full",
+      "seed": 0,
+      "state": "RECORDED",
+      "manifest": "adapter-service-003\\rewindcoder_full\\seed-0\\adapter-service-003\\run-870180def94c4092829b990e4bf75b8b\\manifest.json"
+    }
+  ]
+}

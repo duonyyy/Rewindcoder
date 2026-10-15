@@ -1,0 +1,291 @@
+{
+  "run_id": "run-870180def94c4092829b990e4bf75b8b",
+  "task_id": "adapter-service-003",
+  "rewindcoder_commit": "cd6f9c5dcaa13d938cc49d4350d2dcde377f4123",
+  "fixture_base_commit": "f260333d5fe5fba4f36776d8ee3bf9d658fecf5d",
+  "python_version": "3.13.2",
+  "execution_mode": "LOCAL",
+  "test_commands": [
+    "python -m unittest tests.test_service.NegativeAmountTests",
+    "python -m unittest tests.test_service.ExistingCallerTests"
+  ],
+  "test_results": {
+    "attempts": [
+      {
+        "label": "failed-1",
+        "target": [
+          {
+            "command": "python -m unittest tests.test_service.NegativeAmountTests",
+            "passed": false,
+            "exit_code": 1,
+            "summary": "--------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\Admin\\Desktop\\KLTN\\Do_An_Cuoi_Ky\\rewindcoder\\artifacts\\runs\\run-870180def94c4092829b990e4bf75b8b\\tests\\test_service.py\", line 8, in test_rejects_negative\n    with self.assertRaises(ValueError):\n         ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^\nAssertionError: ValueError not raised\n\n----------------------------------------------------------------------\nRan 1 test in 0.001s\n\nFAILED (failures=1)\n"
+          }
+        ],
+        "regression": [
+          {
+            "command": "python -m unittest tests.test_service.ExistingCallerTests",
+            "passed": true,
+            "exit_code": 0,
+            "summary": ".\n----------------------------------------------------------------------\nRan 1 test in 0.000s\n\nOK\n"
+          }
+        ],
+        "changed_files": [
+          "src/adapter.py"
+        ],
+        "diff_sha256": "6eb7652792e069cc9ffed13a0f607b77a9548ceb0b5b97eaffad6756bd0b5ff0"
+      },
+      {
+        "label": "failed-2",
+        "target": [
+          {
+            "command": "python -m unittest tests.test_service.NegativeAmountTests",
+            "passed": false,
+            "exit_code": 1,
+            "summary": "--------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\Admin\\Desktop\\KLTN\\Do_An_Cuoi_Ky\\rewindcoder\\artifacts\\runs\\run-870180def94c4092829b990e4bf75b8b\\tests\\test_service.py\", line 8, in test_rejects_negative\n    with self.assertRaises(ValueError):\n         ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^\nAssertionError: ValueError not raised\n\n----------------------------------------------------------------------\nRan 1 test in 0.001s\n\nFAILED (failures=1)\n"
+          }
+        ],
+        "regression": [
+          {
+            "command": "python -m unittest tests.test_service.ExistingCallerTests",
+            "passed": true,
+            "exit_code": 0,
+            "summary": ".\n----------------------------------------------------------------------\nRan 1 test in 0.000s\n\nOK\n"
+          }
+        ],
+        "changed_files": [
+          "src/adapter.py"
+        ],
+        "diff_sha256": "6eb7652792e069cc9ffed13a0f607b77a9548ceb0b5b97eaffad6756bd0b5ff0"
+      },
+      {
+        "label": "final",
+        "target": [
+          {
+            "command": "python -m unittest tests.test_service.NegativeAmountTests",
+            "passed": true,
+            "exit_code": 0,
+            "summary": ".\n----------------------------------------------------------------------\nRan 1 test in 0.000s\n\nOK\n"
+          }
+        ],
+        "regression": [
+          {
+            "command": "python -m unittest tests.test_service.ExistingCallerTests",
+            "passed": true,
+            "exit_code": 0,
+            "summary": ".\n----------------------------------------------------------------------\nRan 1 test in 0.000s\n\nOK\n"
+          }
+        ],
+        "changed_files": [
+          "src/adapter.py"
+        ],
+        "diff_sha256": "47a4e5b726fd827045eba893ffbfe691236e9fec81e5c705dd41fc74fd319749"
+      }
+    ]
+  },
+  "timestamp": "2026-10-15T17:21:11.603582+00:00",
+  "tool_policy_version": "policy/v1",
+  "status": "PASS",
+  "provider": "mock",
+  "provider_config": {
+    "scenario": "target_failure"
+  },
+  "seed": 0,
+  "budget": {
+    "max_agent_steps": 12,
+    "max_rewinds": 2,
+    "max_tokens": 4000,
+    "max_tool_calls": 50,
+    "timeout_seconds": 60
+  },
+  "usage": {
+    "steps": 12,
+    "token_estimate": 1565,
+    "tool_calls": 19,
+    "elapsed_seconds": 4.195
+  },
+  "verifier_result": {
+    "passed": true,
+    "failures": [],
+    "changed_files": [
+      "src/adapter.py"
+    ],
+    "base_commit": "f260333d5fe5fba4f36776d8ee3bf9d658fecf5d",
+    "checkpoint_id": "cp-63bf686444a8489282b8454cca86aca7",
+    "agent_checkpoint_id": "cp-63bf686444a8489282b8454cca86aca7",
+    "agent_state_path": "C:\\Users\\Admin\\Desktop\\KLTN\\Do_An_Cuoi_Ky\\rewindcoder\\evals\\results\\raw\\phase5-fixture-smoke-v5\\adapter-service-003\\rewindcoder_full\\seed-0\\adapter-service-003\\run-870180def94c4092829b990e4bf75b8b\\post-recovery-state.json",
+    "restore_checks": {
+      "approval": {
+        "passed": true,
+        "detail": "automatic restore of reviewed disposable fixture"
+      },
+      "checkpoint_integrity": {
+        "passed": true,
+        "detail": "archive, manifest, state and test evidence validated"
+      },
+      "git_head": {
+        "passed": true,
+        "detail": "f260333d5fe5fba4f36776d8ee3bf9d658fecf5d"
+      },
+      "repository_restore": {
+        "passed": true,
+        "detail": "snapshot bytes applied"
+      },
+      "agent_state_restore": {
+        "passed": true,
+        "detail": "C:\\Users\\Admin\\Desktop\\KLTN\\Do_An_Cuoi_Ky\\rewindcoder\\evals\\results\\raw\\phase5-fixture-smoke-v5\\adapter-service-003\\rewindcoder_full\\seed-0\\adapter-service-003\\run-870180def94c4092829b990e4bf75b8b\\restored-state.json"
+      },
+      "verify_workspace_manifest": {
+        "passed": true,
+        "detail": "{\"passed\": true, \"expected_sha256\": \"1b4cbbf859c64bf45130058945728b8208262c032e2934ea8387109f8b961a23\", \"actual_sha256\": \"1b4cbbf859c64bf45130058945728b8208262c032e2934ea8387109f8b961a23\"}"
+      },
+      "verify_git_diff": {
+        "passed": true,
+        "detail": "{\"passed\": true, \"expected_sha256\": \"e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855\", \"actual_sha256\": \"e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855\"}"
+      },
+      "verify_agent_state": {
+        "passed": true,
+        "detail": "{\"passed\": true}"
+      },
+      "verify_target_tests": {
+        "passed": true,
+        "detail": "{\"passed\": true, \"result\": {\"command\": \"python -m unittest tests.test_service.ExistingCallerTests\", \"passed\": true, \"exit_code\": 0, \"summary\": \".\\n----------------------------------------------------------------------\\nRan 1 test in 0.000s\\n\\nOK\\n\"}}"
+      }
+    },
+    "git_diff_sha256": "47a4e5b726fd827045eba893ffbfe691236e9fec81e5c705dd41fc74fd319749",
+    "target_tests_passed": true,
+    "regression_tests_passed": true,
+    "hidden_checks_passed": true,
+    "forbidden_files_modified": false,
+    "security_rule_violated": false,
+    "source_trace_ids": [
+      "event-0052",
+      "event-0055",
+      "event-0060"
+    ]
+  },
+  "stop_reason": "",
+  "patch_sha256": "0b69739c1c4f00a011b64cd0a920e57ed8ef503e9a79f8e2f41650a95221bc97",
+  "workspace_head": "f260333d5fe5fba4f36776d8ee3bf9d658fecf5d",
+  "trace_sha256": "936c83026fd8e503ab96959329038f4d2fd17bb7ccbff7e98c9aefb155046f02",
+  "runner_source_sha256": "e7be8da92ee154cc2a56d6327d02c830b2aa077a30d4551c1131a6d7e202320b",
+  "task_sha256": "05733dabc6bff6f168b115bff011fcbc43a7527dc7f64585b73f652b62e61d31",
+  "recovery": {
+    "scenario": "target_failure",
+    "variant": "rewindcoder_full",
+    "decisions": [
+      {
+        "attempt": 1,
+        "failure_type": "target_failure",
+        "decision": "diagnose",
+        "consecutive_same_failure": 1,
+        "source_trace_ids": [
+          "event-0019",
+          "event-0022",
+          "event-0027"
+        ]
+      },
+      {
+        "attempt": 2,
+        "failure_type": "target_failure",
+        "decision": "rewind",
+        "consecutive_same_failure": 2,
+        "source_trace_ids": [
+          "event-0032",
+          "event-0035",
+          "event-0040"
+        ]
+      }
+    ],
+    "checkpoint_id": "cp-63bf686444a8489282b8454cca86aca7",
+    "approval": {
+      "approved": true,
+      "approver": "fixture-policy",
+      "reason": "automatic restore of reviewed disposable fixture"
+    },
+    "restore": {
+      "conclusion": "PASS",
+      "reason": "",
+      "steps": {
+        "approval": {
+          "passed": true,
+          "detail": "automatic restore of reviewed disposable fixture"
+        },
+        "checkpoint_integrity": {
+          "passed": true,
+          "detail": "archive, manifest, state and test evidence validated"
+        },
+        "git_head": {
+          "passed": true,
+          "detail": "f260333d5fe5fba4f36776d8ee3bf9d658fecf5d"
+        },
+        "repository_restore": {
+          "passed": true,
+          "detail": "snapshot bytes applied"
+        },
+        "agent_state_restore": {
+          "passed": true,
+          "detail": "C:\\Users\\Admin\\Desktop\\KLTN\\Do_An_Cuoi_Ky\\rewindcoder\\evals\\results\\raw\\phase5-fixture-smoke-v5\\adapter-service-003\\rewindcoder_full\\seed-0\\adapter-service-003\\run-870180def94c4092829b990e4bf75b8b\\restored-state.json"
+        },
+        "verify_workspace_manifest": {
+          "passed": true,
+          "detail": "{\"passed\": true, \"expected_sha256\": \"1b4cbbf859c64bf45130058945728b8208262c032e2934ea8387109f8b961a23\", \"actual_sha256\": \"1b4cbbf859c64bf45130058945728b8208262c032e2934ea8387109f8b961a23\"}"
+        },
+        "verify_git_diff": {
+          "passed": true,
+          "detail": "{\"passed\": true, \"expected_sha256\": \"e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855\", \"actual_sha256\": \"e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855\"}"
+        },
+        "verify_agent_state": {
+          "passed": true,
+          "detail": "{\"passed\": true}"
+        },
+        "verify_target_tests": {
+          "passed": true,
+          "detail": "{\"passed\": true, \"result\": {\"command\": \"python -m unittest tests.test_service.ExistingCallerTests\", \"passed\": true, \"exit_code\": 0, \"summary\": \".\\n----------------------------------------------------------------------\\nRan 1 test in 0.000s\\n\\nOK\\n\"}}"
+        }
+      },
+      "run_dir": "C:\\Users\\Admin\\Desktop\\KLTN\\Do_An_Cuoi_Ky\\rewindcoder\\evals\\results\\raw\\phase5-fixture-smoke-v5\\adapter-service-003\\rewindcoder_full\\seed-0\\adapter-service-003\\run-870180def94c4092829b990e4bf75b8b\\checkpoints\\runs\\rewind-3ad0f2816d0f4e74b2a7d306f383b6b4"
+    },
+    "memory": {
+      "failure_type": "target_failure",
+      "failed_hypothesis": "The action retain_negative_amounts would satisfy the public tests.",
+      "evidence": [
+        "target: 90e4bf75b8b\\tests\\test_service.py\", line 8, in test_rejects_negative\n    with self.assertRaises(ValueError):\n         ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^\nAssertionError: ValueError not raised\n\n----------------------------------------------------------------------\nRan 1 test in 0.001s\n\nFAILED (failures=1)\n",
+        "regression: .\n----------------------------------------------------------------------\nRan 1 test in 0.000s\n\nOK\n",
+        "git_diff_sha256:6eb7652792e069cc9ffed13a0f607b77a9548ceb0b5b97eaffad6756bd0b5ff0"
+      ],
+      "failed_actions": [
+        "retain_negative_amounts"
+      ],
+      "avoid_actions": [
+        "retain_negative_amounts"
+      ],
+      "suggested_direction": "Use public test evidence to fix the boundary while preserving regression behavior.",
+      "confidence": 1.0,
+      "source_trace_ids": [
+        "event-0032",
+        "event-0035",
+        "event-0040"
+      ]
+    },
+    "alternative": {
+      "action": "reject_negative_at_adapter_boundary",
+      "approach": "reject_negative_at_adapter_boundary",
+      "files": [
+        "src/adapter.py"
+      ],
+      "validation": [
+        "python -m unittest tests.test_service.NegativeAmountTests",
+        "python -m unittest tests.test_service.ExistingCallerTests"
+      ]
+    }
+  },
+  "evaluation": {
+    "protocol_id": "phase5-fixture-smoke-v5",
+    "protocol_version": "evaluation-protocol/v1",
+    "protocol_sha256": "b7eca02e2af0c12a56125eff85b6ecb000533ba02aec117540cd612ea730f4b6",
+    "variant": "rewindcoder_full",
+    "runner_sha256": "49c567922867998f6a4bd3dfe2238e1083c39ec41e1ee84f8ac9157d398b3b7b",
+    "source_dirty": true
+  },
+  "schema_version": "run-manifest/v1"
+}

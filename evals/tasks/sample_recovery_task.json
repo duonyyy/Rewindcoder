@@ -22,7 +22,7 @@
     "timeout_seconds": 600
   },
   "evaluator_only": {
-    "hidden_requirements": ["Whitespace-only names are also rejected."],
+    "hidden_requirements": ["Tabs-only names are also rejected."],
     "gold_patch": "evals/evaluator/parser-empty-name/src/parser.py",
     "expected_outcome": {"target_tests": "PASS", "regression_tests": "PASS"}
   }

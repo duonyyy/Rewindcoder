@@ -1,0 +1,66 @@
+{
+  "task_id": "demo-parser-001",
+  "issue": "Reject empty user names while preserving existing valid-name behavior.",
+  "requirements": [
+    "R1: empty names are rejected",
+    "R2: existing valid-name tests continue to pass"
+  ],
+  "current_goal": "Reject empty user names while preserving existing valid-name behavior.",
+  "plan": [
+    "validate_stripped_name_then_return_it"
+  ],
+  "current_step": 0,
+  "context_summary": "Clean fixture base; target test is expected to fail before the task fix.",
+  "changed_files": [
+    "src/parser.py"
+  ],
+  "test_results": {
+    "target": [
+      {
+        "command": "python -m unittest tests.test_parser.EmptyNameTests",
+        "passed": true,
+        "exit_code": 0,
+        "summary": ".\n----------------------------------------------------------------------\nRan 1 test in 0.000s\n\nOK\n"
+      }
+    ],
+    "regression": [
+      {
+        "command": "python -m unittest tests.test_parser.ValidNameTests",
+        "passed": true,
+        "exit_code": 0,
+        "summary": ".\n----------------------------------------------------------------------\nRan 1 test in 0.000s\n\nOK\n"
+      }
+    ]
+  },
+  "retry_count": 0,
+  "rewind_count": 1,
+  "current_checkpoint": "cp-274c2e8d0d0e47389d97eaf318b76825",
+  "rewind_memories": [
+    {
+      "failure_type": "regression_failure",
+      "failed_hypothesis": "The action replace_valid_name_with_constant would satisfy the public tests.",
+      "evidence": [
+        "target: .\n----------------------------------------------------------------------\nRan 1 test in 0.000s\n\nOK\n",
+        "regression: r.py\", line 15, in test_normalized_name\n    self.assertEqual(parse_name(\" Ada \"), \"Ada\")\n    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: 'wrong' != 'Ada'\n- wrong\n+ Ada\n\n\n----------------------------------------------------------------------\nRan 1 test in 0.001s\n\nFAILED (failures=1)\n",
+        "git_diff_sha256:8546cc12af4fbad3705b0f192685edb8c441129f29d9587e52a2cf5e4c03ad7a"
+      ],
+      "failed_actions": [
+        "replace_valid_name_with_constant"
+      ],
+      "avoid_actions": [
+        "replace_valid_name_with_constant"
+      ],
+      "suggested_direction": "Use public test evidence to fix the boundary while preserving regression behavior.",
+      "confidence": 1.0,
+      "source_trace_ids": [
+        "event-0030",
+        "event-0033",
+        "event-0038"
+      ]
+    }
+  ],
+  "tool_history": [],
+  "errors": [],
+  "budget_remaining": 599.9975661000062,
+  "schema_version": "state/v1"
+}

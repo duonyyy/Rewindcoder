@@ -1,0 +1,7 @@
+--- a/src/adapter.py
++++ b/src/adapter.py
+@@ -1,2 +1,4 @@
+ def normalize_amount(value: int) -> int:
++    if value < 0:
++        raise ValueError("negative amount")
+     return value

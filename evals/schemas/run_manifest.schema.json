@@ -17,6 +17,20 @@
     "test_results": {"type": "object"},
     "timestamp": {"type": "string", "format": "date-time"},
     "tool_policy_version": {"type": "string", "minLength": 1},
-    "status": {"enum": ["PASS", "FAIL", "NOT_RUN", "NOT_READY"]}
+    "status": {"enum": ["PASS", "FAIL", "NOT_RUN", "NOT_READY"]},
+    "provider": {"type": "string"},
+    "provider_config": {"type": "object"},
+    "seed": {"type": "integer"},
+    "budget": {"type": "object"},
+    "usage": {"type": "object"},
+    "verifier_result": {"type": "object"},
+    "stop_reason": {"type": "string"},
+    "patch_sha256": {"type": "string"},
+    "workspace_head": {"type": "string"},
+    "trace_sha256": {"type": "string"},
+    "runner_source_sha256": {"type": "string"},
+    "task_sha256": {"type": "string"},
+    "recovery": {"type": "object"},
+    "evaluation": {"type": "object"}
   }
 }

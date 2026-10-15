@@ -1,0 +1,69 @@
+{
+  "run_id": "run-97e0d4585718421f89ebdfb15cdbb489",
+  "task_id": "tsv-whitespace-002",
+  "rewindcoder_commit": "cd6f9c5dcaa13d938cc49d4350d2dcde377f4123",
+  "fixture_base_commit": "0b51d8d83af987a08654469016e5405423866c0a",
+  "python_version": "3.13.2",
+  "execution_mode": "LOCAL",
+  "test_commands": [
+    "python -m unittest tests.test_reader.TsvTests",
+    "python -m unittest tests.test_reader.CsvTests"
+  ],
+  "test_results": {
+    "target": [
+      {
+        "command": "python -m unittest tests.test_reader.TsvTests",
+        "passed": true,
+        "exit_code": 0,
+        "summary": ".\n----------------------------------------------------------------------\nRan 1 test in 0.000s\n\nOK\n"
+      }
+    ],
+    "regression": [
+      {
+        "command": "python -m unittest tests.test_reader.CsvTests",
+        "passed": true,
+        "exit_code": 0,
+        "summary": ".\n----------------------------------------------------------------------\nRan 1 test in 0.000s\n\nOK\n"
+      }
+    ]
+  },
+  "timestamp": "2026-10-15T12:05:54.721320+00:00",
+  "tool_policy_version": "policy/v1",
+  "status": "PASS",
+  "provider": "mock",
+  "provider_config": {
+    "scenario": "success"
+  },
+  "seed": 0,
+  "budget": {
+    "max_agent_steps": 12,
+    "max_rewinds": 0,
+    "max_tokens": 4000,
+    "max_tool_calls": 50,
+    "timeout_seconds": 60
+  },
+  "usage": {
+    "steps": 9,
+    "token_estimate": 1083,
+    "tool_calls": 9,
+    "elapsed_seconds": 0.435
+  },
+  "verifier_result": {
+    "passed": true,
+    "failures": [],
+    "changed_files": [
+      "src/reader.py"
+    ],
+    "base_commit": "0b51d8d83af987a08654469016e5405423866c0a",
+    "target_tests_passed": true,
+    "regression_tests_passed": true,
+    "hidden_checks_passed": true
+  },
+  "stop_reason": "",
+  "patch_sha256": "2fb09808a6450095de4354baa02be5b69b3381365d037e3f45af20087fe87769",
+  "workspace_head": "0b51d8d83af987a08654469016e5405423866c0a",
+  "trace_sha256": "af34f8b85117cd77453af0c30c9b38490217094cae2ddb9e4f93958f6fd2e95e",
+  "runner_source_sha256": "100a8bf352c9ea773071c637becccc88a4ec53dc700cbaed99fa85a6b3a25716",
+  "task_sha256": "0a9ac448f3c4b3db6d83140f4def6a127c3b8ce895bd09a0fdce4ad1cb42df38",
+  "schema_version": "run-manifest/v1"
+}

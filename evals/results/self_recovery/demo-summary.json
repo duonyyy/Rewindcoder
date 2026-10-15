@@ -1,0 +1,116 @@
+{
+  "target_failure": {
+    "status": "PASS",
+    "run_id": "run-f964073604f2410f9fe4b9583596787f",
+    "checkpoint_id": "cp-42f8db9261bd45f985631eed1cf217fa",
+    "decisions": [
+      {
+        "attempt": 1,
+        "failure_type": "target_failure",
+        "decision": "diagnose",
+        "consecutive_same_failure": 1,
+        "source_trace_ids": [
+          "event-0017",
+          "event-0020",
+          "event-0025"
+        ]
+      },
+      {
+        "attempt": 2,
+        "failure_type": "target_failure",
+        "decision": "rewind",
+        "consecutive_same_failure": 2,
+        "source_trace_ids": [
+          "event-0030",
+          "event-0033",
+          "event-0038"
+        ]
+      }
+    ],
+    "initial_action": "return_raw_name",
+    "alternative_action": "validate_stripped_name_then_return_it",
+    "restore_conclusion": "PASS",
+    "verifier_passed": true,
+    "trace": "C:\\Users\\Admin\\Desktop\\KLTN\\Do_An_Cuoi_Ky\\rewindcoder\\evals\\results\\self_recovery\\demo-parser-001\\run-f964073604f2410f9fe4b9583596787f\\trace.jsonl",
+    "run_manifest": "C:\\Users\\Admin\\Desktop\\KLTN\\Do_An_Cuoi_Ky\\rewindcoder\\evals\\results\\self_recovery\\demo-parser-001\\run-f964073604f2410f9fe4b9583596787f\\manifest.json",
+    "patch": "C:\\Users\\Admin\\Desktop\\KLTN\\Do_An_Cuoi_Ky\\rewindcoder\\evals\\results\\self_recovery\\demo-parser-001\\run-f964073604f2410f9fe4b9583596787f\\diff.patch",
+    "agent_state": "C:\\Users\\Admin\\Desktop\\KLTN\\Do_An_Cuoi_Ky\\rewindcoder\\evals\\results\\self_recovery\\demo-parser-001\\run-f964073604f2410f9fe4b9583596787f\\post-recovery-state.json",
+    "rewind_trace": "C:\\Users\\Admin\\Desktop\\KLTN\\Do_An_Cuoi_Ky\\rewindcoder\\evals\\results\\self_recovery\\demo-parser-001\\run-f964073604f2410f9fe4b9583596787f\\checkpoints\\runs\\rewind-a52a0c6b487a45d9a89789b8191f9671\\trace.jsonl"
+  },
+  "regression_failure": {
+    "status": "PASS",
+    "run_id": "run-accb9da6e45a4f468d3357028e694538",
+    "checkpoint_id": "cp-274c2e8d0d0e47389d97eaf318b76825",
+    "decisions": [
+      {
+        "attempt": 1,
+        "failure_type": "regression_failure",
+        "decision": "diagnose",
+        "consecutive_same_failure": 1,
+        "source_trace_ids": [
+          "event-0017",
+          "event-0020",
+          "event-0025"
+        ]
+      },
+      {
+        "attempt": 2,
+        "failure_type": "regression_failure",
+        "decision": "rewind",
+        "consecutive_same_failure": 2,
+        "source_trace_ids": [
+          "event-0030",
+          "event-0033",
+          "event-0038"
+        ]
+      }
+    ],
+    "initial_action": "replace_valid_name_with_constant",
+    "alternative_action": "validate_stripped_name_then_return_it",
+    "restore_conclusion": "PASS",
+    "verifier_passed": true,
+    "trace": "C:\\Users\\Admin\\Desktop\\KLTN\\Do_An_Cuoi_Ky\\rewindcoder\\evals\\results\\self_recovery\\demo-parser-001\\run-accb9da6e45a4f468d3357028e694538\\trace.jsonl",
+    "run_manifest": "C:\\Users\\Admin\\Desktop\\KLTN\\Do_An_Cuoi_Ky\\rewindcoder\\evals\\results\\self_recovery\\demo-parser-001\\run-accb9da6e45a4f468d3357028e694538\\manifest.json",
+    "patch": "C:\\Users\\Admin\\Desktop\\KLTN\\Do_An_Cuoi_Ky\\rewindcoder\\evals\\results\\self_recovery\\demo-parser-001\\run-accb9da6e45a4f468d3357028e694538\\diff.patch",
+    "agent_state": "C:\\Users\\Admin\\Desktop\\KLTN\\Do_An_Cuoi_Ky\\rewindcoder\\evals\\results\\self_recovery\\demo-parser-001\\run-accb9da6e45a4f468d3357028e694538\\post-recovery-state.json",
+    "rewind_trace": "C:\\Users\\Admin\\Desktop\\KLTN\\Do_An_Cuoi_Ky\\rewindcoder\\evals\\results\\self_recovery\\demo-parser-001\\run-accb9da6e45a4f468d3357028e694538\\checkpoints\\runs\\rewind-374bdbb9cdf7418683f3b61ecfaf81ad\\trace.jsonl"
+  },
+  "no_progress": {
+    "status": "PASS",
+    "run_id": "run-ade0400fdc1844df8c5b7e1f0df14338",
+    "checkpoint_id": "cp-31ecb2087ebc431ca689f334a3965997",
+    "decisions": [
+      {
+        "attempt": 1,
+        "failure_type": "target_failure",
+        "decision": "diagnose",
+        "consecutive_same_failure": 1,
+        "source_trace_ids": [
+          "event-0017",
+          "event-0020",
+          "event-0025"
+        ]
+      },
+      {
+        "attempt": 2,
+        "failure_type": "no_progress",
+        "decision": "rewind",
+        "consecutive_same_failure": 2,
+        "source_trace_ids": [
+          "event-0030",
+          "event-0033",
+          "event-0038"
+        ]
+      }
+    ],
+    "initial_action": "annotate_unchanged_behavior",
+    "alternative_action": "validate_stripped_name_then_return_it",
+    "restore_conclusion": "PASS",
+    "verifier_passed": true,
+    "trace": "C:\\Users\\Admin\\Desktop\\KLTN\\Do_An_Cuoi_Ky\\rewindcoder\\evals\\results\\self_recovery\\demo-parser-001\\run-ade0400fdc1844df8c5b7e1f0df14338\\trace.jsonl",
+    "run_manifest": "C:\\Users\\Admin\\Desktop\\KLTN\\Do_An_Cuoi_Ky\\rewindcoder\\evals\\results\\self_recovery\\demo-parser-001\\run-ade0400fdc1844df8c5b7e1f0df14338\\manifest.json",
+    "patch": "C:\\Users\\Admin\\Desktop\\KLTN\\Do_An_Cuoi_Ky\\rewindcoder\\evals\\results\\self_recovery\\demo-parser-001\\run-ade0400fdc1844df8c5b7e1f0df14338\\diff.patch",
+    "agent_state": "C:\\Users\\Admin\\Desktop\\KLTN\\Do_An_Cuoi_Ky\\rewindcoder\\evals\\results\\self_recovery\\demo-parser-001\\run-ade0400fdc1844df8c5b7e1f0df14338\\post-recovery-state.json",
+    "rewind_trace": "C:\\Users\\Admin\\Desktop\\KLTN\\Do_An_Cuoi_Ky\\rewindcoder\\evals\\results\\self_recovery\\demo-parser-001\\run-ade0400fdc1844df8c5b7e1f0df14338\\checkpoints\\runs\\rewind-cd4df8c2ded146fc822c0826ad423475\\trace.jsonl"
+  }
+}

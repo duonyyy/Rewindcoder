@@ -4,7 +4,9 @@ from __future__ import annotations
 
 from dataclasses import dataclass
 
+from rewindcoder.checkpoint.manager import CheckpointManager
 from rewindcoder.checkpoint.metadata import CheckpointMetadata
+from rewindcoder.checkpoint.repository_snapshot import git
 
 
 @dataclass(frozen=True, slots=True)
@@ -29,4 +31,16 @@ def select_checkpoint(candidates: list[CheckpointScore]) -> CheckpointMetadata:
     if not safe:
         raise ValueError("No safe checkpoint is available for recovery")
     return max(safe, key=lambda candidate: candidate.value).checkpoint
+
+
+def select_recoverable(manager: CheckpointManager) -> CheckpointMetadata:
+    """Revalidate the entire bundle, workspace identity and HEAD."""
+    if manager.workspace is None:
+        raise ValueError("workspace required for recovery")
+    head = git(manager.workspace, "rev-parse", "HEAD").decode().strip()
+    candidates = [item for item in manager.list_safe() if item.git_head == head]
+    if not candidates:
+        raise ValueError("no recoverable checkpoint for workspace and Git HEAD; human action required")
+    selected = max(candidates, key=lambda item: item.created_at)
+    return manager.load(selected.checkpoint_id)
 

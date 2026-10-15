@@ -38,9 +38,15 @@ class WorkspaceTools:
         if not resolved.is_relative_to(self.root) or not resolved.is_file():
             raise ToolDenied("path outside workspace or missing")
         rel = resolved.relative_to(self.root).as_posix()
-        if rel == ".git" or rel.startswith(".git/") or "evaluator_only" in rel:
+        folded = rel.casefold()
+        if folded == ".git" or folded.startswith(".git/") or "evaluator_only" in folded:
             raise ToolDenied("internal path denied")
-        if edit and any(rel == prefix or rel.startswith(prefix + "/") for prefix in self.forbidden_paths):
+        leaf = resolved.name.casefold()
+        if (leaf == ".env" or leaf.startswith(".env.") or leaf in
+                {"credentials.json", "id_rsa", "id_ed25519"} or
+                resolved.suffix.casefold() in {".pem", ".key", ".p12", ".pfx"}):
+            raise ToolDenied("sensitive path denied")
+        if edit and any(folded == prefix.casefold() or folded.startswith(prefix.casefold() + "/") for prefix in self.forbidden_paths):
             raise ToolDenied("forbidden edit")
         return resolved
 
@@ -81,7 +87,7 @@ class WorkspaceTools:
             result = subprocess.run(
                 parts, cwd=self.root, capture_output=True, text=True,
                 timeout=max(0.01, timeout_seconds),
-                env={**os.environ, "PYTHONDONTWRITEBYTECODE": "1", "PYTHONPATH": ""},
+                env={**os.environ, "PYTHONDONTWRITEBYTECODE": "1", "PYTHONPATH": "", "GIT_CONFIG_NOSYSTEM": "1", "GIT_CONFIG_GLOBAL": os.devnull, "GIT_TERMINAL_PROMPT": "0", "GIT_EXTERNAL_DIFF": ""},
             )
             return Observation(result.returncode == 0, (result.stdout + result.stderr)[-4000:], result.returncode)
         except subprocess.TimeoutExpired:

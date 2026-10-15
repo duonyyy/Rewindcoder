@@ -1,0 +1,22 @@
+{
+  "schema_version": "evaluation-protocol/v1",
+  "protocol_id": "phase5-fixture-smoke-v5",
+  "purpose": "Runner and validator smoke test; excluded from RQ1-RQ3 inference",
+  "task_ids": ["demo-parser-001", "tsv-whitespace-002", "adapter-service-003"],
+  "task_paths": {
+    "demo-parser-001": "evals/tasks/sample_recovery_task.json",
+    "tsv-whitespace-002": "evals/phase5_tasks/tsv_whitespace.json",
+    "adapter-service-003": "evals/phase5_tasks/adapter_service.json"
+  },
+  "selection": "All three pre-existing locked Phase 1 fixtures; no replacement after outcomes",
+  "exclusion": "Invalid base commit, unsupported provider/variant, or unsafe environment remains a recorded SKIP or INVALID cell",
+  "provider": {"name": "offline-recovery-mock", "model": "scripted-v1", "temperature": 0},
+  "seeds": [0],
+  "variants": ["forward_only", "retry_only", "agent_state_rewind", "repository_only_rewind", "aligned_no_memory", "rewindcoder_full"],
+  "scenario": "target_failure",
+  "common_prompt": "Issue, explicit requirements, repository evidence and public tests only; evaluator_only never enters provider context",
+  "budget": "Per-task locked task contract; identical across variants and seeds within each task",
+  "tool_policy_version": "policy/v1",
+  "environment": "Windows local disposable fixture; Python >=3.11; no arbitrary repository sandbox",
+  "main_evaluation": {"status": "NOT_READY", "target_task_count_min": 10, "target_task_count_max": 20, "reason": "Only three locked fixtures and no validated general coding provider or repository sandbox"}
+}

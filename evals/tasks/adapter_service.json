@@ -8,5 +8,5 @@
   "regression_commands": ["python -m unittest tests.test_service.ExistingCallerTests"],
   "forbidden_paths": [".git/", "README.md", "tests/"],
   "budget": {"max_agent_steps": 12, "max_rewinds": 0, "max_tokens": 4000, "max_tool_calls": 50, "timeout_seconds": 60},
-  "evaluator_only": {"hidden_requirements": ["Keep the service call shape unchanged."], "gold_patch": "evals/evaluator/adapter-service/src/adapter.py", "expected_outcome": {"target_tests": "PASS", "regression_tests": "PASS"}}
+  "evaluator_only": {"hidden_requirements": ["A direct adapter call also rejects negative amounts."], "gold_patch": "evals/evaluator/adapter-service/src/adapter.py", "expected_outcome": {"target_tests": "PASS", "regression_tests": "PASS"}}
 }

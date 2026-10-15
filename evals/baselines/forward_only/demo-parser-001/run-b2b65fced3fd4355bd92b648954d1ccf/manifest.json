@@ -1,0 +1,69 @@
+{
+  "run_id": "run-b2b65fced3fd4355bd92b648954d1ccf",
+  "task_id": "demo-parser-001",
+  "rewindcoder_commit": "cd6f9c5dcaa13d938cc49d4350d2dcde377f4123",
+  "fixture_base_commit": "704e442013b980e52ecb23e9e75ac9ee1dcfe48c",
+  "python_version": "3.13.2",
+  "execution_mode": "LOCAL",
+  "test_commands": [
+    "python -m unittest tests.test_parser.EmptyNameTests",
+    "python -m unittest tests.test_parser.ValidNameTests"
+  ],
+  "test_results": {
+    "target": [
+      {
+        "command": "python -m unittest tests.test_parser.EmptyNameTests",
+        "passed": true,
+        "exit_code": 0,
+        "summary": ".\n----------------------------------------------------------------------\nRan 1 test in 0.000s\n\nOK\n"
+      }
+    ],
+    "regression": [
+      {
+        "command": "python -m unittest tests.test_parser.ValidNameTests",
+        "passed": true,
+        "exit_code": 0,
+        "summary": ".\n----------------------------------------------------------------------\nRan 1 test in 0.000s\n\nOK\n"
+      }
+    ]
+  },
+  "timestamp": "2026-10-15T12:05:54.706940+00:00",
+  "tool_policy_version": "policy/v1",
+  "status": "PASS",
+  "provider": "mock",
+  "provider_config": {
+    "scenario": "success"
+  },
+  "seed": 0,
+  "budget": {
+    "max_agent_steps": 12,
+    "max_rewinds": 2,
+    "max_tokens": 20000,
+    "max_tool_calls": 50,
+    "timeout_seconds": 600
+  },
+  "usage": {
+    "steps": 9,
+    "token_estimate": 1080,
+    "tool_calls": 9,
+    "elapsed_seconds": 0.429
+  },
+  "verifier_result": {
+    "passed": true,
+    "failures": [],
+    "changed_files": [
+      "src/parser.py"
+    ],
+    "base_commit": "704e442013b980e52ecb23e9e75ac9ee1dcfe48c",
+    "target_tests_passed": true,
+    "regression_tests_passed": true,
+    "hidden_checks_passed": true
+  },
+  "stop_reason": "",
+  "patch_sha256": "2c3eff7c76f4753b0a2c8a3ff53626aa00de0253dc0ee87efe181243c61be889",
+  "workspace_head": "704e442013b980e52ecb23e9e75ac9ee1dcfe48c",
+  "trace_sha256": "a7b3b98327ea41ed09f1a59e5f3669278299fee7ba41ad130085bd9cef200f95",
+  "runner_source_sha256": "100a8bf352c9ea773071c637becccc88a4ec53dc700cbaed99fa85a6b3a25716",
+  "task_sha256": "57bb96095994b9af0cc89239a3f17575eb7442519f19412eb3ec530a7c13aa94",
+  "schema_version": "run-manifest/v1"
+}

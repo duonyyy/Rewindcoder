@@ -1,0 +1,6 @@
+--- a/src/adapter.py
++++ b/src/adapter.py
+@@ -1,2 +1,2 @@
+ def normalize_amount(value: int) -> int:
+-    return value
++    return int(value)  # faulty negative-amount behavior

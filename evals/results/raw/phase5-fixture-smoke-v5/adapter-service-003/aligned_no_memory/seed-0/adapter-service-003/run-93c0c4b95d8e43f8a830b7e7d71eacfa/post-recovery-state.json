@@ -1,0 +1,43 @@
+{
+  "task_id": "adapter-service-003",
+  "issue": "Reject negative invoice amounts at the adapter boundary without breaking service callers.",
+  "requirements": [
+    "Negative amounts raise ValueError",
+    "Positive and zero amounts retain existing behavior"
+  ],
+  "current_goal": "Reject negative invoice amounts at the adapter boundary without breaking service callers.",
+  "plan": [
+    "reject_negative_at_adapter_boundary"
+  ],
+  "current_step": 0,
+  "context_summary": "Clean fixture base; target test is expected to fail before the task fix.",
+  "changed_files": [
+    "src/adapter.py"
+  ],
+  "test_results": {
+    "target": [
+      {
+        "command": "python -m unittest tests.test_service.NegativeAmountTests",
+        "passed": true,
+        "exit_code": 0,
+        "summary": ".\n----------------------------------------------------------------------\nRan 1 test in 0.000s\n\nOK\n"
+      }
+    ],
+    "regression": [
+      {
+        "command": "python -m unittest tests.test_service.ExistingCallerTests",
+        "passed": true,
+        "exit_code": 0,
+        "summary": ".\n----------------------------------------------------------------------\nRan 1 test in 0.000s\n\nOK\n"
+      }
+    ]
+  },
+  "retry_count": 0,
+  "rewind_count": 1,
+  "current_checkpoint": "cp-623f58d516f7485cbd13b6274572b09b",
+  "rewind_memories": [],
+  "tool_history": [],
+  "errors": [],
+  "budget_remaining": 59.99822949999361,
+  "schema_version": "state/v1"
+}

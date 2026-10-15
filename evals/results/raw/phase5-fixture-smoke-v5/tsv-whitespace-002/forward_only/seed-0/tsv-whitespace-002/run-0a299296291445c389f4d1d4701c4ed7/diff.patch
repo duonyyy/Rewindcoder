@@ -1,0 +1,8 @@
+--- a/src/reader.py
++++ b/src/reader.py
+@@ -4,4 +4,4 @@
+ 
+ def read_rows(text: str, delimiter: str) -> list[list[str]]:
+     rows = list(csv.reader(StringIO(text), delimiter=delimiter))
+-    return [[cell.strip() for cell in row] for row in rows]
++    return [[cell.strip() for cell in row] for row in rows]  # faulty TSV behavior

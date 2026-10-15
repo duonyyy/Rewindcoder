@@ -1,0 +1,43 @@
+{
+  "task_id": "demo-parser-001",
+  "issue": "Reject empty user names while preserving existing valid-name behavior.",
+  "requirements": [
+    "R1: empty names are rejected",
+    "R2: existing valid-name tests continue to pass"
+  ],
+  "current_goal": "Reject empty user names while preserving existing valid-name behavior.",
+  "plan": [
+    "validate_stripped_name_then_return_it"
+  ],
+  "current_step": 0,
+  "context_summary": "Clean fixture base; target test is expected to fail before the task fix.",
+  "changed_files": [
+    "src/parser.py"
+  ],
+  "test_results": {
+    "target": [
+      {
+        "command": "python -m unittest tests.test_parser.EmptyNameTests",
+        "passed": true,
+        "exit_code": 0,
+        "summary": ".\n----------------------------------------------------------------------\nRan 1 test in 0.000s\n\nOK\n"
+      }
+    ],
+    "regression": [
+      {
+        "command": "python -m unittest tests.test_parser.ValidNameTests",
+        "passed": true,
+        "exit_code": 0,
+        "summary": ".\n----------------------------------------------------------------------\nRan 1 test in 0.000s\n\nOK\n"
+      }
+    ]
+  },
+  "retry_count": 0,
+  "rewind_count": 1,
+  "current_checkpoint": "cp-7221bb839ce0470abfac54aa8bf6a9c7",
+  "rewind_memories": [],
+  "tool_history": [],
+  "errors": [],
+  "budget_remaining": 599.9993676000013,
+  "schema_version": "state/v1"
+}

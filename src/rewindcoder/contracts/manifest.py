@@ -22,6 +22,9 @@ _MANIFEST_FIELDS = {
     "schema_version", "run_id", "task_id", "rewindcoder_commit", "fixture_base_commit",
     "python_version", "execution_mode", "test_commands", "test_results", "timestamp",
     "tool_policy_version", "status",
+    "provider", "provider_config", "seed", "budget", "usage", "verifier_result", "stop_reason",
+    "patch_sha256", "workspace_head", "trace_sha256", "runner_source_sha256", "task_sha256",
+    "recovery", "evaluation",
 }
 
 
@@ -52,6 +55,20 @@ class RunManifest:
     timestamp: str = ""
     tool_policy_version: str = "policy/v1"
     status: RunStatus = RunStatus.NOT_RUN
+    provider: str = ""
+    provider_config: dict[str, Any] = field(default_factory=dict)
+    seed: int = 0
+    budget: dict[str, Any] = field(default_factory=dict)
+    usage: dict[str, Any] = field(default_factory=dict)
+    verifier_result: dict[str, Any] = field(default_factory=dict)
+    stop_reason: str = ""
+    patch_sha256: str = ""
+    workspace_head: str = ""
+    trace_sha256: str = ""
+    runner_source_sha256: str = ""
+    task_sha256: str = ""
+    recovery: dict[str, Any] = field(default_factory=dict)
+    evaluation: dict[str, Any] = field(default_factory=dict)
     schema_version: str = RUN_MANIFEST_SCHEMA_VERSION
 
     @classmethod
@@ -83,6 +100,20 @@ def make_run_manifest(
     test_results: dict[str, Any] | None = None,
     tool_policy_version: str = "policy/v1",
     status: RunStatus = RunStatus.NOT_RUN,
+    provider: str = "",
+    provider_config: dict[str, Any] | None = None,
+    seed: int = 0,
+    budget: dict[str, Any] | None = None,
+    usage: dict[str, Any] | None = None,
+    verifier_result: dict[str, Any] | None = None,
+    stop_reason: str = "",
+    patch_sha256: str = "",
+    workspace_head: str = "",
+    trace_sha256: str = "",
+    runner_source_sha256: str = "",
+    task_sha256: str = "",
+    recovery: dict[str, Any] | None = None,
+    evaluation: dict[str, Any] | None = None,
 ) -> RunManifest:
     return RunManifest.from_dict(
         {
@@ -98,6 +129,20 @@ def make_run_manifest(
             "timestamp": datetime.now(timezone.utc).isoformat(),
             "tool_policy_version": tool_policy_version,
             "status": status.value,
+            "provider": provider,
+            "provider_config": provider_config or {},
+            "seed": seed,
+            "budget": budget or {},
+            "usage": usage or {},
+            "verifier_result": verifier_result or {},
+            "stop_reason": stop_reason,
+            "patch_sha256": patch_sha256,
+            "workspace_head": workspace_head,
+            "trace_sha256": trace_sha256,
+            "runner_source_sha256": runner_source_sha256,
+            "task_sha256": task_sha256,
+            "recovery": recovery or {},
+            "evaluation": evaluation or {},
         }
     )
 
@@ -105,7 +150,7 @@ def make_run_manifest(
 def validate_run_manifest(raw: Any) -> None:
     manifest = require_mapping(raw, "run_manifest")
     reject_unknown_fields(manifest, _MANIFEST_FIELDS, "run_manifest")
-    missing = _MANIFEST_FIELDS - set(manifest)
+    missing = (_MANIFEST_FIELDS - {"recovery", "evaluation"}) - set(manifest)
     if missing:
         raise ContractValidationError(
             f"run_manifest is missing required fields: {', '.join(sorted(missing))}"
@@ -126,6 +171,14 @@ def validate_run_manifest(raw: Any) -> None:
         raise ContractValidationError("run_manifest.status is invalid")
     require_string_list(manifest["test_commands"], "run_manifest.test_commands", allow_empty=True)
     require_mapping(manifest["test_results"], "run_manifest.test_results")
+    for key in ("provider", "stop_reason", "patch_sha256", "workspace_head", "trace_sha256", "runner_source_sha256", "task_sha256"):
+        if key in manifest and not isinstance(manifest[key], str):
+            raise ContractValidationError(f"run_manifest.{key} must be a string")
+    if "seed" in manifest and (not isinstance(manifest["seed"], int) or isinstance(manifest["seed"], bool)):
+        raise ContractValidationError("run_manifest.seed must be an integer")
+    for key in ("provider_config", "budget", "usage", "verifier_result", "recovery", "evaluation"):
+        if key in manifest:
+            require_mapping(manifest[key], f"run_manifest.{key}")
     try:
         parsed = datetime.fromisoformat(manifest["timestamp"].replace("Z", "+00:00"))
     except ValueError as error:

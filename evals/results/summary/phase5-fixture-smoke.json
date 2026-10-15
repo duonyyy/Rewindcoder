@@ -1,0 +1,301 @@
+{
+  "schema_version": "evaluation-summary/v1",
+  "protocol_sha256": "b7eca02e2af0c12a56125eff85b6ecb000533ba02aec117540cd612ea730f4b6",
+  "scope": "fixture smoke only; RQ1-RQ3 not inferable",
+  "expected_cells": 18,
+  "valid_cells": 18,
+  "skipped_cells": [],
+  "invalid_or_missing": [],
+  "paired_outcomes": [
+    {
+      "task_id": "adapter-service-003",
+      "seed": 0,
+      "outcomes": {
+        "agent_state_rewind": "NOT_READY",
+        "aligned_no_memory": "PASS",
+        "forward_only": "FAIL",
+        "repository_only_rewind": "NOT_READY",
+        "retry_only": "PASS",
+        "rewindcoder_full": "PASS"
+      }
+    },
+    {
+      "task_id": "demo-parser-001",
+      "seed": 0,
+      "outcomes": {
+        "agent_state_rewind": "NOT_READY",
+        "aligned_no_memory": "PASS",
+        "forward_only": "FAIL",
+        "repository_only_rewind": "NOT_READY",
+        "retry_only": "PASS",
+        "rewindcoder_full": "PASS"
+      }
+    },
+    {
+      "task_id": "tsv-whitespace-002",
+      "seed": 0,
+      "outcomes": {
+        "agent_state_rewind": "NOT_READY",
+        "aligned_no_memory": "PASS",
+        "forward_only": "FAIL",
+        "repository_only_rewind": "NOT_READY",
+        "retry_only": "PASS",
+        "rewindcoder_full": "PASS"
+      }
+    }
+  ],
+  "metrics": {
+    "forward_only": {
+      "planned": 3,
+      "valid": 3,
+      "skipped": 0,
+      "not_ready": 0,
+      "task_success": {
+        "numerator": 0,
+        "denominator": 3
+      },
+      "task_success_planned": {
+        "numerator": 0,
+        "denominator": 3,
+        "note": "Descriptive planned-cell yield; SKIP and NOT_READY retain separate statuses"
+      },
+      "recovery_success": {
+        "numerator": 0,
+        "denominator": 0
+      },
+      "repeated_failure": {
+        "numerator": 0,
+        "denominator": 0,
+        "note": "No post-rewind failure was observed; zero denominator is N/A"
+      },
+      "wrong_rewind": {
+        "numerator": 0,
+        "denominator": 0,
+        "note": "Intentional one-sided ablations count as policy-invalid restores"
+      },
+      "restore_integrity": {
+        "numerator": 0,
+        "denominator": 0
+      },
+      "regression": {
+        "numerator": 0,
+        "denominator": 3
+      },
+      "token_estimate_total": 2395,
+      "latency_seconds_total": 4.303,
+      "tool_calls_total": 25,
+      "rewinds": 0,
+      "checkpoint_bytes": 15091
+    },
+    "retry_only": {
+      "planned": 3,
+      "valid": 3,
+      "skipped": 0,
+      "not_ready": 0,
+      "task_success": {
+        "numerator": 3,
+        "denominator": 3
+      },
+      "task_success_planned": {
+        "numerator": 3,
+        "denominator": 3,
+        "note": "Descriptive planned-cell yield; SKIP and NOT_READY retain separate statuses"
+      },
+      "recovery_success": {
+        "numerator": 0,
+        "denominator": 0
+      },
+      "repeated_failure": {
+        "numerator": 0,
+        "denominator": 0,
+        "note": "No post-rewind failure was observed; zero denominator is N/A"
+      },
+      "wrong_rewind": {
+        "numerator": 0,
+        "denominator": 0,
+        "note": "Intentional one-sided ablations count as policy-invalid restores"
+      },
+      "restore_integrity": {
+        "numerator": 0,
+        "denominator": 0
+      },
+      "regression": {
+        "numerator": 0,
+        "denominator": 3
+      },
+      "token_estimate_total": 3557,
+      "latency_seconds_total": 5.74,
+      "tool_calls_total": 40,
+      "rewinds": 0,
+      "checkpoint_bytes": 15093
+    },
+    "agent_state_rewind": {
+      "planned": 3,
+      "valid": 3,
+      "skipped": 0,
+      "not_ready": 3,
+      "task_success": {
+        "numerator": 0,
+        "denominator": 0
+      },
+      "task_success_planned": {
+        "numerator": 0,
+        "denominator": 3,
+        "note": "Descriptive planned-cell yield; SKIP and NOT_READY retain separate statuses"
+      },
+      "recovery_success": {
+        "numerator": 0,
+        "denominator": 3
+      },
+      "repeated_failure": {
+        "numerator": 0,
+        "denominator": 0,
+        "note": "No post-rewind failure was observed; zero denominator is N/A"
+      },
+      "wrong_rewind": {
+        "numerator": 3,
+        "denominator": 3,
+        "note": "Intentional one-sided ablations count as policy-invalid restores"
+      },
+      "restore_integrity": {
+        "numerator": 0,
+        "denominator": 3
+      },
+      "regression": {
+        "numerator": 0,
+        "denominator": 0
+      },
+      "token_estimate_total": 2395,
+      "latency_seconds_total": 8.103,
+      "tool_calls_total": 40,
+      "rewinds": 3,
+      "checkpoint_bytes": 15095
+    },
+    "repository_only_rewind": {
+      "planned": 3,
+      "valid": 3,
+      "skipped": 0,
+      "not_ready": 3,
+      "task_success": {
+        "numerator": 0,
+        "denominator": 0
+      },
+      "task_success_planned": {
+        "numerator": 0,
+        "denominator": 3,
+        "note": "Descriptive planned-cell yield; SKIP and NOT_READY retain separate statuses"
+      },
+      "recovery_success": {
+        "numerator": 0,
+        "denominator": 3
+      },
+      "repeated_failure": {
+        "numerator": 0,
+        "denominator": 0,
+        "note": "No post-rewind failure was observed; zero denominator is N/A"
+      },
+      "wrong_rewind": {
+        "numerator": 3,
+        "denominator": 3,
+        "note": "Intentional one-sided ablations count as policy-invalid restores"
+      },
+      "restore_integrity": {
+        "numerator": 0,
+        "denominator": 3
+      },
+      "regression": {
+        "numerator": 0,
+        "denominator": 0
+      },
+      "token_estimate_total": 2395,
+      "latency_seconds_total": 8.379,
+      "tool_calls_total": 40,
+      "rewinds": 3,
+      "checkpoint_bytes": 15093
+    },
+    "aligned_no_memory": {
+      "planned": 3,
+      "valid": 3,
+      "skipped": 0,
+      "not_ready": 0,
+      "task_success": {
+        "numerator": 3,
+        "denominator": 3
+      },
+      "task_success_planned": {
+        "numerator": 3,
+        "denominator": 3,
+        "note": "Descriptive planned-cell yield; SKIP and NOT_READY retain separate statuses"
+      },
+      "recovery_success": {
+        "numerator": 3,
+        "denominator": 3
+      },
+      "repeated_failure": {
+        "numerator": 0,
+        "denominator": 0,
+        "note": "No post-rewind failure was observed; zero denominator is N/A"
+      },
+      "wrong_rewind": {
+        "numerator": 0,
+        "denominator": 3,
+        "note": "Intentional one-sided ablations count as policy-invalid restores"
+      },
+      "restore_integrity": {
+        "numerator": 3,
+        "denominator": 3
+      },
+      "regression": {
+        "numerator": 0,
+        "denominator": 3
+      },
+      "token_estimate_total": 3863,
+      "latency_seconds_total": 10.155000000000001,
+      "tool_calls_total": 55,
+      "rewinds": 3,
+      "checkpoint_bytes": 15093
+    },
+    "rewindcoder_full": {
+      "planned": 3,
+      "valid": 3,
+      "skipped": 0,
+      "not_ready": 0,
+      "task_success": {
+        "numerator": 3,
+        "denominator": 3
+      },
+      "task_success_planned": {
+        "numerator": 3,
+        "denominator": 3,
+        "note": "Descriptive planned-cell yield; SKIP and NOT_READY retain separate statuses"
+      },
+      "recovery_success": {
+        "numerator": 3,
+        "denominator": 3
+      },
+      "repeated_failure": {
+        "numerator": 0,
+        "denominator": 0,
+        "note": "No post-rewind failure was observed; zero denominator is N/A"
+      },
+      "wrong_rewind": {
+        "numerator": 0,
+        "denominator": 3,
+        "note": "Intentional one-sided ablations count as policy-invalid restores"
+      },
+      "restore_integrity": {
+        "numerator": 3,
+        "denominator": 3
+      },
+      "regression": {
+        "numerator": 0,
+        "denominator": 3
+      },
+      "token_estimate_total": 4541,
+      "latency_seconds_total": 10.81,
+      "tool_calls_total": 55,
+      "rewinds": 3,
+      "checkpoint_bytes": 15093
+    }
+  }
+}

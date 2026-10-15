@@ -1,0 +1,66 @@
+{
+  "task_id": "adapter-service-003",
+  "issue": "Reject negative invoice amounts at the adapter boundary without breaking service callers.",
+  "requirements": [
+    "Negative amounts raise ValueError",
+    "Positive and zero amounts retain existing behavior"
+  ],
+  "current_goal": "Reject negative invoice amounts at the adapter boundary without breaking service callers.",
+  "plan": [
+    "reject_negative_at_adapter_boundary"
+  ],
+  "current_step": 0,
+  "context_summary": "Clean fixture base; target test is expected to fail before the task fix.",
+  "changed_files": [
+    "src/adapter.py"
+  ],
+  "test_results": {
+    "target": [
+      {
+        "command": "python -m unittest tests.test_service.NegativeAmountTests",
+        "passed": true,
+        "exit_code": 0,
+        "summary": ".\n----------------------------------------------------------------------\nRan 1 test in 0.000s\n\nOK\n"
+      }
+    ],
+    "regression": [
+      {
+        "command": "python -m unittest tests.test_service.ExistingCallerTests",
+        "passed": true,
+        "exit_code": 0,
+        "summary": ".\n----------------------------------------------------------------------\nRan 1 test in 0.000s\n\nOK\n"
+      }
+    ]
+  },
+  "retry_count": 0,
+  "rewind_count": 1,
+  "current_checkpoint": "cp-63bf686444a8489282b8454cca86aca7",
+  "rewind_memories": [
+    {
+      "failure_type": "target_failure",
+      "failed_hypothesis": "The action retain_negative_amounts would satisfy the public tests.",
+      "evidence": [
+        "target: 90e4bf75b8b\\tests\\test_service.py\", line 8, in test_rejects_negative\n    with self.assertRaises(ValueError):\n         ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^\nAssertionError: ValueError not raised\n\n----------------------------------------------------------------------\nRan 1 test in 0.001s\n\nFAILED (failures=1)\n",
+        "regression: .\n----------------------------------------------------------------------\nRan 1 test in 0.000s\n\nOK\n",
+        "git_diff_sha256:6eb7652792e069cc9ffed13a0f607b77a9548ceb0b5b97eaffad6756bd0b5ff0"
+      ],
+      "failed_actions": [
+        "retain_negative_amounts"
+      ],
+      "avoid_actions": [
+        "retain_negative_amounts"
+      ],
+      "suggested_direction": "Use public test evidence to fix the boundary while preserving regression behavior.",
+      "confidence": 1.0,
+      "source_trace_ids": [
+        "event-0032",
+        "event-0035",
+        "event-0040"
+      ]
+    }
+  ],
+  "tool_history": [],
+  "errors": [],
+  "budget_remaining": 59.99779120000312,
+  "schema_version": "state/v1"
+}

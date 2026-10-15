@@ -1,0 +1,113 @@
+{
+  "run_id": "run-99ce75da415a4083adc0684ad9f6f1be",
+  "task_id": "demo-parser-001",
+  "rewindcoder_commit": "cd6f9c5dcaa13d938cc49d4350d2dcde377f4123",
+  "fixture_base_commit": "704e442013b980e52ecb23e9e75ac9ee1dcfe48c",
+  "python_version": "3.13.2",
+  "execution_mode": "LOCAL",
+  "test_commands": [
+    "python -m unittest tests.test_parser.EmptyNameTests",
+    "python -m unittest tests.test_parser.ValidNameTests"
+  ],
+  "test_results": {
+    "attempts": [
+      {
+        "label": "failed-1",
+        "target": [
+          {
+            "command": "python -m unittest tests.test_parser.EmptyNameTests",
+            "passed": false,
+            "exit_code": 1,
+            "summary": "-----\nTraceback (most recent call last):\n  File \"C:\\Users\\Admin\\Desktop\\KLTN\\Do_An_Cuoi_Ky\\rewindcoder\\artifacts\\runs\\run-99ce75da415a4083adc0684ad9f6f1be\\tests\\test_parser.py\", line 9, in test_empty_and_whitespace\n    with self.subTest(value=value), self.assertRaises(ValueError):\n                                    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^\nAssertionError: ValueError not raised\n\n----------------------------------------------------------------------\nRan 1 test in 0.004s\n\nFAILED (failures=2)\n"
+          }
+        ],
+        "regression": [
+          {
+            "command": "python -m unittest tests.test_parser.ValidNameTests",
+            "passed": true,
+            "exit_code": 0,
+            "summary": ".\n----------------------------------------------------------------------\nRan 1 test in 0.000s\n\nOK\n"
+          }
+        ],
+        "changed_files": [
+          "src/parser.py"
+        ],
+        "diff_sha256": "0844b4a7c7033dfc70f1b3699f68b9eefa981dd46df65d3e618d3af910619044"
+      }
+    ]
+  },
+  "timestamp": "2026-10-15T17:20:18.276766+00:00",
+  "tool_policy_version": "policy/v1",
+  "status": "FAIL",
+  "provider": "mock",
+  "provider_config": {
+    "scenario": "target_failure"
+  },
+  "seed": 0,
+  "budget": {
+    "max_agent_steps": 12,
+    "max_rewinds": 2,
+    "max_tokens": 20000,
+    "max_tool_calls": 50,
+    "timeout_seconds": 600
+  },
+  "usage": {
+    "steps": 5,
+    "token_estimate": 770,
+    "tool_calls": 8,
+    "elapsed_seconds": 1.285
+  },
+  "verifier_result": {
+    "passed": false,
+    "failures": [
+      "target tests failed",
+      "requirements not satisfied",
+      "hidden acceptance failed"
+    ],
+    "changed_files": [
+      "src/parser.py"
+    ],
+    "base_commit": "704e442013b980e52ecb23e9e75ac9ee1dcfe48c",
+    "target_tests_passed": false,
+    "regression_tests_passed": true,
+    "hidden_checks_passed": false,
+    "forbidden_files_modified": false
+  },
+  "stop_reason": "target tests failed; requirements not satisfied; hidden acceptance failed",
+  "patch_sha256": "6aecefece15b92178cf339060aec6d9b5af40e5dada7a6cfc9802ee8045ee37b",
+  "workspace_head": "704e442013b980e52ecb23e9e75ac9ee1dcfe48c",
+  "trace_sha256": "1b0776b1d819f9827bf4baead1f4f48dc667544be87fab388e1a2e86a78edf77",
+  "runner_source_sha256": "e7be8da92ee154cc2a56d6327d02c830b2aa077a30d4551c1131a6d7e202320b",
+  "task_sha256": "57bb96095994b9af0cc89239a3f17575eb7442519f19412eb3ec530a7c13aa94",
+  "recovery": {
+    "scenario": "target_failure",
+    "variant": "forward_only",
+    "decisions": [
+      {
+        "attempt": 1,
+        "failure_type": "target_failure",
+        "decision": "stop",
+        "consecutive_same_failure": 1,
+        "source_trace_ids": [
+          "event-0017",
+          "event-0020",
+          "event-0025"
+        ]
+      }
+    ],
+    "checkpoint_id": "cp-27cfb25ea9ac407dbf99cb8befb1528d",
+    "approval": null,
+    "restore": null,
+    "memory": null,
+    "alternative": null
+  },
+  "evaluation": {
+    "protocol_id": "phase5-fixture-smoke-v5",
+    "protocol_version": "evaluation-protocol/v1",
+    "protocol_sha256": "b7eca02e2af0c12a56125eff85b6ecb000533ba02aec117540cd612ea730f4b6",
+    "variant": "forward_only",
+    "runner_sha256": "49c567922867998f6a4bd3dfe2238e1083c39ec41e1ee84f8ac9157d398b3b7b",
+    "source_dirty": true
+  },
+  "schema_version": "run-manifest/v1"
+}

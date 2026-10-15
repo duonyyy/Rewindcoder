@@ -1,0 +1,66 @@
+{
+  "task_id": "tsv-whitespace-002",
+  "issue": "Preserve TSV cell whitespace while retaining CSV trimming behavior.",
+  "requirements": [
+    "TSV preserves original cell text",
+    "CSV still trims cells"
+  ],
+  "current_goal": "Preserve TSV cell whitespace while retaining CSV trimming behavior.",
+  "plan": [
+    "preserve_tsv_cells_and_trim_csv"
+  ],
+  "current_step": 0,
+  "context_summary": "Clean fixture base; target test is expected to fail before the task fix.",
+  "changed_files": [
+    "src/reader.py"
+  ],
+  "test_results": {
+    "target": [
+      {
+        "command": "python -m unittest tests.test_reader.TsvTests",
+        "passed": true,
+        "exit_code": 0,
+        "summary": ".\n----------------------------------------------------------------------\nRan 1 test in 0.000s\n\nOK\n"
+      }
+    ],
+    "regression": [
+      {
+        "command": "python -m unittest tests.test_reader.CsvTests",
+        "passed": true,
+        "exit_code": 0,
+        "summary": ".\n----------------------------------------------------------------------\nRan 1 test in 0.000s\n\nOK\n"
+      }
+    ]
+  },
+  "retry_count": 0,
+  "rewind_count": 1,
+  "current_checkpoint": "cp-29c81e71511048e19f2240228166ba4e",
+  "rewind_memories": [
+    {
+      "failure_type": "target_failure",
+      "failed_hypothesis": "The action retain_tsv_trimming would satisfy the public tests.",
+      "evidence": [
+        "target: ^^^^^^^^^^^^^^^^^^^^\nAssertionError: Lists differ: [['A', 'B']] != [[' A ', 'B ']]\n\nFirst differing element 0:\n['A', 'B']\n[' A ', 'B ']\n\n- [['A', 'B']]\n+ [[' A ', 'B ']]\n?    + +     +\n\n\n----------------------------------------------------------------------\nRan 1 test in 0.001s\n\nFAILED (failures=1)\n",
+        "regression: .\n----------------------------------------------------------------------\nRan 1 test in 0.000s\n\nOK\n",
+        "git_diff_sha256:e3c3fa904e00f0922dcc3e75da7d9a9adc6c00d4e82ea79ec76530e5620459e8"
+      ],
+      "failed_actions": [
+        "retain_tsv_trimming"
+      ],
+      "avoid_actions": [
+        "retain_tsv_trimming"
+      ],
+      "suggested_direction": "Use public test evidence to fix the boundary while preserving regression behavior.",
+      "confidence": 1.0,
+      "source_trace_ids": [
+        "event-0030",
+        "event-0033",
+        "event-0038"
+      ]
+    }
+  ],
+  "tool_history": [],
+  "errors": [],
+  "budget_remaining": 59.99812920000113,
+  "schema_version": "state/v1"
+}

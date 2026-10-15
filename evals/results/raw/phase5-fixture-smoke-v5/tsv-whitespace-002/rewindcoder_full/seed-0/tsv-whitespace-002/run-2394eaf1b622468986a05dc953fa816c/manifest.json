@@ -1,0 +1,291 @@
+{
+  "run_id": "run-2394eaf1b622468986a05dc953fa816c",
+  "task_id": "tsv-whitespace-002",
+  "rewindcoder_commit": "cd6f9c5dcaa13d938cc49d4350d2dcde377f4123",
+  "fixture_base_commit": "0b51d8d83af987a08654469016e5405423866c0a",
+  "python_version": "3.13.2",
+  "execution_mode": "LOCAL",
+  "test_commands": [
+    "python -m unittest tests.test_reader.TsvTests",
+    "python -m unittest tests.test_reader.CsvTests"
+  ],
+  "test_results": {
+    "attempts": [
+      {
+        "label": "failed-1",
+        "target": [
+          {
+            "command": "python -m unittest tests.test_reader.TsvTests",
+            "passed": false,
+            "exit_code": 1,
+            "summary": "8986a05dc953fa816c\\tests\\test_reader.py\", line 8, in test_preserves_meaningful_space\n    self.assertEqual(read_rows(\" A \\tB \\n\", \"\\t\"), [[\" A \", \"B \"]])\n    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: Lists differ: [['A', 'B']] != [[' A ', 'B ']]\n\nFirst differing element 0:\n['A', 'B']\n[' A ', 'B ']\n\n- [['A', 'B']]\n+ [[' A ', 'B ']]\n?    + +     +\n\n\n----------------------------------------------------------------------\nRan 1 test in 0.001s\n\nFAILED (failures=1)\n"
+          }
+        ],
+        "regression": [
+          {
+            "command": "python -m unittest tests.test_reader.CsvTests",
+            "passed": true,
+            "exit_code": 0,
+            "summary": ".\n----------------------------------------------------------------------\nRan 1 test in 0.000s\n\nOK\n"
+          }
+        ],
+        "changed_files": [
+          "src/reader.py"
+        ],
+        "diff_sha256": "e3c3fa904e00f0922dcc3e75da7d9a9adc6c00d4e82ea79ec76530e5620459e8"
+      },
+      {
+        "label": "failed-2",
+        "target": [
+          {
+            "command": "python -m unittest tests.test_reader.TsvTests",
+            "passed": false,
+            "exit_code": 1,
+            "summary": "8986a05dc953fa816c\\tests\\test_reader.py\", line 8, in test_preserves_meaningful_space\n    self.assertEqual(read_rows(\" A \\tB \\n\", \"\\t\"), [[\" A \", \"B \"]])\n    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: Lists differ: [['A', 'B']] != [[' A ', 'B ']]\n\nFirst differing element 0:\n['A', 'B']\n[' A ', 'B ']\n\n- [['A', 'B']]\n+ [[' A ', 'B ']]\n?    + +     +\n\n\n----------------------------------------------------------------------\nRan 1 test in 0.001s\n\nFAILED (failures=1)\n"
+          }
+        ],
+        "regression": [
+          {
+            "command": "python -m unittest tests.test_reader.CsvTests",
+            "passed": true,
+            "exit_code": 0,
+            "summary": ".\n----------------------------------------------------------------------\nRan 1 test in 0.000s\n\nOK\n"
+          }
+        ],
+        "changed_files": [
+          "src/reader.py"
+        ],
+        "diff_sha256": "e3c3fa904e00f0922dcc3e75da7d9a9adc6c00d4e82ea79ec76530e5620459e8"
+      },
+      {
+        "label": "final",
+        "target": [
+          {
+            "command": "python -m unittest tests.test_reader.TsvTests",
+            "passed": true,
+            "exit_code": 0,
+            "summary": ".\n----------------------------------------------------------------------\nRan 1 test in 0.000s\n\nOK\n"
+          }
+        ],
+        "regression": [
+          {
+            "command": "python -m unittest tests.test_reader.CsvTests",
+            "passed": true,
+            "exit_code": 0,
+            "summary": ".\n----------------------------------------------------------------------\nRan 1 test in 0.000s\n\nOK\n"
+          }
+        ],
+        "changed_files": [
+          "src/reader.py"
+        ],
+        "diff_sha256": "6070562e49c4c8e2f01eac70a0f3d131e8cbb3c2fe8d58819d60e66a455b2665"
+      }
+    ]
+  },
+  "timestamp": "2026-10-15T17:20:51.196325+00:00",
+  "tool_policy_version": "policy/v1",
+  "status": "PASS",
+  "provider": "mock",
+  "provider_config": {
+    "scenario": "target_failure"
+  },
+  "seed": 0,
+  "budget": {
+    "max_agent_steps": 12,
+    "max_rewinds": 2,
+    "max_tokens": 4000,
+    "max_tool_calls": 50,
+    "timeout_seconds": 60
+  },
+  "usage": {
+    "steps": 12,
+    "token_estimate": 1504,
+    "tool_calls": 18,
+    "elapsed_seconds": 3.722
+  },
+  "verifier_result": {
+    "passed": true,
+    "failures": [],
+    "changed_files": [
+      "src/reader.py"
+    ],
+    "base_commit": "0b51d8d83af987a08654469016e5405423866c0a",
+    "checkpoint_id": "cp-29c81e71511048e19f2240228166ba4e",
+    "agent_checkpoint_id": "cp-29c81e71511048e19f2240228166ba4e",
+    "agent_state_path": "C:\\Users\\Admin\\Desktop\\KLTN\\Do_An_Cuoi_Ky\\rewindcoder\\evals\\results\\raw\\phase5-fixture-smoke-v5\\tsv-whitespace-002\\rewindcoder_full\\seed-0\\tsv-whitespace-002\\run-2394eaf1b622468986a05dc953fa816c\\post-recovery-state.json",
+    "restore_checks": {
+      "approval": {
+        "passed": true,
+        "detail": "automatic restore of reviewed disposable fixture"
+      },
+      "checkpoint_integrity": {
+        "passed": true,
+        "detail": "archive, manifest, state and test evidence validated"
+      },
+      "git_head": {
+        "passed": true,
+        "detail": "0b51d8d83af987a08654469016e5405423866c0a"
+      },
+      "repository_restore": {
+        "passed": true,
+        "detail": "snapshot bytes applied"
+      },
+      "agent_state_restore": {
+        "passed": true,
+        "detail": "C:\\Users\\Admin\\Desktop\\KLTN\\Do_An_Cuoi_Ky\\rewindcoder\\evals\\results\\raw\\phase5-fixture-smoke-v5\\tsv-whitespace-002\\rewindcoder_full\\seed-0\\tsv-whitespace-002\\run-2394eaf1b622468986a05dc953fa816c\\restored-state.json"
+      },
+      "verify_workspace_manifest": {
+        "passed": true,
+        "detail": "{\"passed\": true, \"expected_sha256\": \"bf33b0b9e60615e2807bb67154128394d845f466c2a08345ac77e3717c61ba2c\", \"actual_sha256\": \"bf33b0b9e60615e2807bb67154128394d845f466c2a08345ac77e3717c61ba2c\"}"
+      },
+      "verify_git_diff": {
+        "passed": true,
+        "detail": "{\"passed\": true, \"expected_sha256\": \"e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855\", \"actual_sha256\": \"e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855\"}"
+      },
+      "verify_agent_state": {
+        "passed": true,
+        "detail": "{\"passed\": true}"
+      },
+      "verify_target_tests": {
+        "passed": true,
+        "detail": "{\"passed\": true, \"result\": {\"command\": \"python -m unittest tests.test_reader.CsvTests\", \"passed\": true, \"exit_code\": 0, \"summary\": \".\\n----------------------------------------------------------------------\\nRan 1 test in 0.000s\\n\\nOK\\n\"}}"
+      }
+    },
+    "git_diff_sha256": "6070562e49c4c8e2f01eac70a0f3d131e8cbb3c2fe8d58819d60e66a455b2665",
+    "target_tests_passed": true,
+    "regression_tests_passed": true,
+    "hidden_checks_passed": true,
+    "forbidden_files_modified": false,
+    "security_rule_violated": false,
+    "source_trace_ids": [
+      "event-0050",
+      "event-0053",
+      "event-0058"
+    ]
+  },
+  "stop_reason": "",
+  "patch_sha256": "2fb09808a6450095de4354baa02be5b69b3381365d037e3f45af20087fe87769",
+  "workspace_head": "0b51d8d83af987a08654469016e5405423866c0a",
+  "trace_sha256": "3b2277ed530c11f7f122b29acb505bd51f4e843caaeabd7d6a9bfa2e02ce6687",
+  "runner_source_sha256": "e7be8da92ee154cc2a56d6327d02c830b2aa077a30d4551c1131a6d7e202320b",
+  "task_sha256": "a691f6ef97cd6a527c799384c48ab134f85d6847662896ffdc86f414c41a7023",
+  "recovery": {
+    "scenario": "target_failure",
+    "variant": "rewindcoder_full",
+    "decisions": [
+      {
+        "attempt": 1,
+        "failure_type": "target_failure",
+        "decision": "diagnose",
+        "consecutive_same_failure": 1,
+        "source_trace_ids": [
+          "event-0017",
+          "event-0020",
+          "event-0025"
+        ]
+      },
+      {
+        "attempt": 2,
+        "failure_type": "target_failure",
+        "decision": "rewind",
+        "consecutive_same_failure": 2,
+        "source_trace_ids": [
+          "event-0030",
+          "event-0033",
+          "event-0038"
+        ]
+      }
+    ],
+    "checkpoint_id": "cp-29c81e71511048e19f2240228166ba4e",
+    "approval": {
+      "approved": true,
+      "approver": "fixture-policy",
+      "reason": "automatic restore of reviewed disposable fixture"
+    },
+    "restore": {
+      "conclusion": "PASS",
+      "reason": "",
+      "steps": {
+        "approval": {
+          "passed": true,
+          "detail": "automatic restore of reviewed disposable fixture"
+        },
+        "checkpoint_integrity": {
+          "passed": true,
+          "detail": "archive, manifest, state and test evidence validated"
+        },
+        "git_head": {
+          "passed": true,
+          "detail": "0b51d8d83af987a08654469016e5405423866c0a"
+        },
+        "repository_restore": {
+          "passed": true,
+          "detail": "snapshot bytes applied"
+        },
+        "agent_state_restore": {
+          "passed": true,
+          "detail": "C:\\Users\\Admin\\Desktop\\KLTN\\Do_An_Cuoi_Ky\\rewindcoder\\evals\\results\\raw\\phase5-fixture-smoke-v5\\tsv-whitespace-002\\rewindcoder_full\\seed-0\\tsv-whitespace-002\\run-2394eaf1b622468986a05dc953fa816c\\restored-state.json"
+        },
+        "verify_workspace_manifest": {
+          "passed": true,
+          "detail": "{\"passed\": true, \"expected_sha256\": \"bf33b0b9e60615e2807bb67154128394d845f466c2a08345ac77e3717c61ba2c\", \"actual_sha256\": \"bf33b0b9e60615e2807bb67154128394d845f466c2a08345ac77e3717c61ba2c\"}"
+        },
+        "verify_git_diff": {
+          "passed": true,
+          "detail": "{\"passed\": true, \"expected_sha256\": \"e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855\", \"actual_sha256\": \"e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855\"}"
+        },
+        "verify_agent_state": {
+          "passed": true,
+          "detail": "{\"passed\": true}"
+        },
+        "verify_target_tests": {
+          "passed": true,
+          "detail": "{\"passed\": true, \"result\": {\"command\": \"python -m unittest tests.test_reader.CsvTests\", \"passed\": true, \"exit_code\": 0, \"summary\": \".\\n----------------------------------------------------------------------\\nRan 1 test in 0.000s\\n\\nOK\\n\"}}"
+        }
+      },
+      "run_dir": "C:\\Users\\Admin\\Desktop\\KLTN\\Do_An_Cuoi_Ky\\rewindcoder\\evals\\results\\raw\\phase5-fixture-smoke-v5\\tsv-whitespace-002\\rewindcoder_full\\seed-0\\tsv-whitespace-002\\run-2394eaf1b622468986a05dc953fa816c\\checkpoints\\runs\\rewind-7bed819d6890466dbdc1b216641f4f31"
+    },
+    "memory": {
+      "failure_type": "target_failure",
+      "failed_hypothesis": "The action retain_tsv_trimming would satisfy the public tests.",
+      "evidence": [
+        "target: ^^^^^^^^^^^^^^^^^^^^\nAssertionError: Lists differ: [['A', 'B']] != [[' A ', 'B ']]\n\nFirst differing element 0:\n['A', 'B']\n[' A ', 'B ']\n\n- [['A', 'B']]\n+ [[' A ', 'B ']]\n?    + +     +\n\n\n----------------------------------------------------------------------\nRan 1 test in 0.001s\n\nFAILED (failures=1)\n",
+        "regression: .\n----------------------------------------------------------------------\nRan 1 test in 0.000s\n\nOK\n",
+        "git_diff_sha256:e3c3fa904e00f0922dcc3e75da7d9a9adc6c00d4e82ea79ec76530e5620459e8"
+      ],
+      "failed_actions": [
+        "retain_tsv_trimming"
+      ],
+      "avoid_actions": [
+        "retain_tsv_trimming"
+      ],
+      "suggested_direction": "Use public test evidence to fix the boundary while preserving regression behavior.",
+      "confidence": 1.0,
+      "source_trace_ids": [
+        "event-0030",
+        "event-0033",
+        "event-0038"
+      ]
+    },
+    "alternative": {
+      "action": "preserve_tsv_cells_and_trim_csv",
+      "approach": "preserve_tsv_cells_and_trim_csv",
+      "files": [
+        "src/reader.py"
+      ],
+      "validation": [
+        "python -m unittest tests.test_reader.TsvTests",
+        "python -m unittest tests.test_reader.CsvTests"
+      ]
+    }
+  },
+  "evaluation": {
+    "protocol_id": "phase5-fixture-smoke-v5",
+    "protocol_version": "evaluation-protocol/v1",
+    "protocol_sha256": "b7eca02e2af0c12a56125eff85b6ecb000533ba02aec117540cd612ea730f4b6",
+    "variant": "rewindcoder_full",
+    "runner_sha256": "49c567922867998f6a4bd3dfe2238e1083c39ec41e1ee84f8ac9157d398b3b7b",
+    "source_dirty": true
+  },
+  "schema_version": "run-manifest/v1"
+}

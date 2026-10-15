@@ -1,0 +1,12 @@
+{
+  "schema_version": "task/v1",
+  "task_id": "adapter-service-003",
+  "repository": {"kind": "fixture", "path": "evals/fixtures/adapter-service", "base_commit": "f260333d5fe5fba4f36776d8ee3bf9d658fecf5d"},
+  "issue": "Reject negative invoice amounts at the adapter boundary without breaking service callers.",
+  "explicit_requirements": ["Negative amounts raise ValueError", "Positive and zero amounts retain existing behavior"],
+  "target_commands": ["python -m unittest tests.test_service.NegativeAmountTests"],
+  "regression_commands": ["python -m unittest tests.test_service.ExistingCallerTests"],
+  "forbidden_paths": [".git/", "README.md", "tests/"],
+  "budget": {"max_agent_steps": 12, "max_rewinds": 2, "max_tokens": 4000, "max_tool_calls": 50, "timeout_seconds": 60},
+  "evaluator_only": {"hidden_requirements": ["A direct adapter call also rejects negative amounts."], "gold_patch": "evals/evaluator/adapter-service/src/adapter.py", "expected_outcome": {"target_tests": "PASS", "regression_tests": "PASS"}}
+}

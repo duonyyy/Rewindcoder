@@ -1,0 +1,284 @@
+{
+  "run_id": "run-accb9da6e45a4f468d3357028e694538",
+  "task_id": "demo-parser-001",
+  "rewindcoder_commit": "cd6f9c5dcaa13d938cc49d4350d2dcde377f4123",
+  "fixture_base_commit": "704e442013b980e52ecb23e9e75ac9ee1dcfe48c",
+  "python_version": "3.13.2",
+  "execution_mode": "LOCAL",
+  "test_commands": [
+    "python -m unittest tests.test_parser.EmptyNameTests",
+    "python -m unittest tests.test_parser.ValidNameTests"
+  ],
+  "test_results": {
+    "attempts": [
+      {
+        "label": "failed-1",
+        "target": [
+          {
+            "command": "python -m unittest tests.test_parser.EmptyNameTests",
+            "passed": true,
+            "exit_code": 0,
+            "summary": ".\n----------------------------------------------------------------------\nRan 1 test in 0.000s\n\nOK\n"
+          }
+        ],
+        "regression": [
+          {
+            "command": "python -m unittest tests.test_parser.ValidNameTests",
+            "passed": false,
+            "exit_code": 1,
+            "summary": "----------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\Admin\\Desktop\\KLTN\\Do_An_Cuoi_Ky\\rewindcoder\\artifacts\\runs\\run-accb9da6e45a4f468d3357028e694538\\tests\\test_parser.py\", line 15, in test_normalized_name\n    self.assertEqual(parse_name(\" Ada \"), \"Ada\")\n    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: 'wrong' != 'Ada'\n- wrong\n+ Ada\n\n\n----------------------------------------------------------------------\nRan 1 test in 0.001s\n\nFAILED (failures=1)\n"
+          }
+        ],
+        "changed_files": [
+          "src/parser.py"
+        ],
+        "diff_sha256": "8546cc12af4fbad3705b0f192685edb8c441129f29d9587e52a2cf5e4c03ad7a"
+      },
+      {
+        "label": "failed-2",
+        "target": [
+          {
+            "command": "python -m unittest tests.test_parser.EmptyNameTests",
+            "passed": true,
+            "exit_code": 0,
+            "summary": ".\n----------------------------------------------------------------------\nRan 1 test in 0.000s\n\nOK\n"
+          }
+        ],
+        "regression": [
+          {
+            "command": "python -m unittest tests.test_parser.ValidNameTests",
+            "passed": false,
+            "exit_code": 1,
+            "summary": "----------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\Admin\\Desktop\\KLTN\\Do_An_Cuoi_Ky\\rewindcoder\\artifacts\\runs\\run-accb9da6e45a4f468d3357028e694538\\tests\\test_parser.py\", line 15, in test_normalized_name\n    self.assertEqual(parse_name(\" Ada \"), \"Ada\")\n    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: 'wrong' != 'Ada'\n- wrong\n+ Ada\n\n\n----------------------------------------------------------------------\nRan 1 test in 0.001s\n\nFAILED (failures=1)\n"
+          }
+        ],
+        "changed_files": [
+          "src/parser.py"
+        ],
+        "diff_sha256": "8546cc12af4fbad3705b0f192685edb8c441129f29d9587e52a2cf5e4c03ad7a"
+      },
+      {
+        "label": "final",
+        "target": [
+          {
+            "command": "python -m unittest tests.test_parser.EmptyNameTests",
+            "passed": true,
+            "exit_code": 0,
+            "summary": ".\n----------------------------------------------------------------------\nRan 1 test in 0.000s\n\nOK\n"
+          }
+        ],
+        "regression": [
+          {
+            "command": "python -m unittest tests.test_parser.ValidNameTests",
+            "passed": true,
+            "exit_code": 0,
+            "summary": ".\n----------------------------------------------------------------------\nRan 1 test in 0.000s\n\nOK\n"
+          }
+        ],
+        "changed_files": [
+          "src/parser.py"
+        ],
+        "diff_sha256": "93045567f3ab19f99f4d91d444084bb2a8349e81cc49ee14a8ea51904372868d"
+      }
+    ]
+  },
+  "timestamp": "2026-10-15T17:25:47.627257+00:00",
+  "tool_policy_version": "policy/v1",
+  "status": "PASS",
+  "provider": "mock",
+  "provider_config": {
+    "scenario": "regression_failure"
+  },
+  "seed": 0,
+  "budget": {
+    "max_agent_steps": 12,
+    "max_rewinds": 2,
+    "max_tokens": 20000,
+    "max_tool_calls": 50,
+    "timeout_seconds": 600
+  },
+  "usage": {
+    "steps": 12,
+    "token_estimate": 1505,
+    "tool_calls": 18,
+    "elapsed_seconds": 6.042
+  },
+  "verifier_result": {
+    "passed": true,
+    "failures": [],
+    "changed_files": [
+      "src/parser.py"
+    ],
+    "base_commit": "704e442013b980e52ecb23e9e75ac9ee1dcfe48c",
+    "checkpoint_id": "cp-274c2e8d0d0e47389d97eaf318b76825",
+    "agent_checkpoint_id": "cp-274c2e8d0d0e47389d97eaf318b76825",
+    "agent_state_path": "C:\\Users\\Admin\\Desktop\\KLTN\\Do_An_Cuoi_Ky\\rewindcoder\\evals\\results\\self_recovery\\demo-parser-001\\run-accb9da6e45a4f468d3357028e694538\\post-recovery-state.json",
+    "restore_checks": {
+      "approval": {
+        "passed": true,
+        "detail": "automatic restore of reviewed disposable fixture"
+      },
+      "checkpoint_integrity": {
+        "passed": true,
+        "detail": "archive, manifest, state and test evidence validated"
+      },
+      "git_head": {
+        "passed": true,
+        "detail": "704e442013b980e52ecb23e9e75ac9ee1dcfe48c"
+      },
+      "repository_restore": {
+        "passed": true,
+        "detail": "snapshot bytes applied"
+      },
+      "agent_state_restore": {
+        "passed": true,
+        "detail": "C:\\Users\\Admin\\Desktop\\KLTN\\Do_An_Cuoi_Ky\\rewindcoder\\evals\\results\\self_recovery\\demo-parser-001\\run-accb9da6e45a4f468d3357028e694538\\restored-state.json"
+      },
+      "verify_workspace_manifest": {
+        "passed": true,
+        "detail": "{\"passed\": true, \"expected_sha256\": \"b1f0cae5b883cede8f14124d3c8f98cf6fd4169a93667cbd6cca57646bc4af0d\", \"actual_sha256\": \"b1f0cae5b883cede8f14124d3c8f98cf6fd4169a93667cbd6cca57646bc4af0d\"}"
+      },
+      "verify_git_diff": {
+        "passed": true,
+        "detail": "{\"passed\": true, \"expected_sha256\": \"e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855\", \"actual_sha256\": \"e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855\"}"
+      },
+      "verify_agent_state": {
+        "passed": true,
+        "detail": "{\"passed\": true}"
+      },
+      "verify_target_tests": {
+        "passed": true,
+        "detail": "{\"passed\": true, \"result\": {\"command\": \"python -m unittest tests.test_parser.ValidNameTests\", \"passed\": true, \"exit_code\": 0, \"summary\": \".\\n----------------------------------------------------------------------\\nRan 1 test in 0.000s\\n\\nOK\\n\"}}"
+      }
+    },
+    "git_diff_sha256": "93045567f3ab19f99f4d91d444084bb2a8349e81cc49ee14a8ea51904372868d",
+    "target_tests_passed": true,
+    "regression_tests_passed": true,
+    "hidden_checks_passed": true,
+    "forbidden_files_modified": false,
+    "security_rule_violated": false,
+    "source_trace_ids": [
+      "event-0050",
+      "event-0053",
+      "event-0058"
+    ]
+  },
+  "stop_reason": "",
+  "patch_sha256": "2c3eff7c76f4753b0a2c8a3ff53626aa00de0253dc0ee87efe181243c61be889",
+  "workspace_head": "704e442013b980e52ecb23e9e75ac9ee1dcfe48c",
+  "trace_sha256": "8a632ae4d4370abdfc2f0b71505b423490f206e52d30f4bd82727e9870d9c56b",
+  "runner_source_sha256": "e7be8da92ee154cc2a56d6327d02c830b2aa077a30d4551c1131a6d7e202320b",
+  "task_sha256": "57bb96095994b9af0cc89239a3f17575eb7442519f19412eb3ec530a7c13aa94",
+  "recovery": {
+    "scenario": "regression_failure",
+    "variant": "rewindcoder_full",
+    "decisions": [
+      {
+        "attempt": 1,
+        "failure_type": "regression_failure",
+        "decision": "diagnose",
+        "consecutive_same_failure": 1,
+        "source_trace_ids": [
+          "event-0017",
+          "event-0020",
+          "event-0025"
+        ]
+      },
+      {
+        "attempt": 2,
+        "failure_type": "regression_failure",
+        "decision": "rewind",
+        "consecutive_same_failure": 2,
+        "source_trace_ids": [
+          "event-0030",
+          "event-0033",
+          "event-0038"
+        ]
+      }
+    ],
+    "checkpoint_id": "cp-274c2e8d0d0e47389d97eaf318b76825",
+    "approval": {
+      "approved": true,
+      "approver": "fixture-policy",
+      "reason": "automatic restore of reviewed disposable fixture"
+    },
+    "restore": {
+      "conclusion": "PASS",
+      "reason": "",
+      "steps": {
+        "approval": {
+          "passed": true,
+          "detail": "automatic restore of reviewed disposable fixture"
+        },
+        "checkpoint_integrity": {
+          "passed": true,
+          "detail": "archive, manifest, state and test evidence validated"
+        },
+        "git_head": {
+          "passed": true,
+          "detail": "704e442013b980e52ecb23e9e75ac9ee1dcfe48c"
+        },
+        "repository_restore": {
+          "passed": true,
+          "detail": "snapshot bytes applied"
+        },
+        "agent_state_restore": {
+          "passed": true,
+          "detail": "C:\\Users\\Admin\\Desktop\\KLTN\\Do_An_Cuoi_Ky\\rewindcoder\\evals\\results\\self_recovery\\demo-parser-001\\run-accb9da6e45a4f468d3357028e694538\\restored-state.json"
+        },
+        "verify_workspace_manifest": {
+          "passed": true,
+          "detail": "{\"passed\": true, \"expected_sha256\": \"b1f0cae5b883cede8f14124d3c8f98cf6fd4169a93667cbd6cca57646bc4af0d\", \"actual_sha256\": \"b1f0cae5b883cede8f14124d3c8f98cf6fd4169a93667cbd6cca57646bc4af0d\"}"
+        },
+        "verify_git_diff": {
+          "passed": true,
+          "detail": "{\"passed\": true, \"expected_sha256\": \"e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855\", \"actual_sha256\": \"e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855\"}"
+        },
+        "verify_agent_state": {
+          "passed": true,
+          "detail": "{\"passed\": true}"
+        },
+        "verify_target_tests": {
+          "passed": true,
+          "detail": "{\"passed\": true, \"result\": {\"command\": \"python -m unittest tests.test_parser.ValidNameTests\", \"passed\": true, \"exit_code\": 0, \"summary\": \".\\n----------------------------------------------------------------------\\nRan 1 test in 0.000s\\n\\nOK\\n\"}}"
+        }
+      },
+      "run_dir": "C:\\Users\\Admin\\Desktop\\KLTN\\Do_An_Cuoi_Ky\\rewindcoder\\evals\\results\\self_recovery\\demo-parser-001\\run-accb9da6e45a4f468d3357028e694538\\checkpoints\\runs\\rewind-374bdbb9cdf7418683f3b61ecfaf81ad"
+    },
+    "memory": {
+      "failure_type": "regression_failure",
+      "failed_hypothesis": "The action replace_valid_name_with_constant would satisfy the public tests.",
+      "evidence": [
+        "target: .\n----------------------------------------------------------------------\nRan 1 test in 0.000s\n\nOK\n",
+        "regression: r.py\", line 15, in test_normalized_name\n    self.assertEqual(parse_name(\" Ada \"), \"Ada\")\n    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: 'wrong' != 'Ada'\n- wrong\n+ Ada\n\n\n----------------------------------------------------------------------\nRan 1 test in 0.001s\n\nFAILED (failures=1)\n",
+        "git_diff_sha256:8546cc12af4fbad3705b0f192685edb8c441129f29d9587e52a2cf5e4c03ad7a"
+      ],
+      "failed_actions": [
+        "replace_valid_name_with_constant"
+      ],
+      "avoid_actions": [
+        "replace_valid_name_with_constant"
+      ],
+      "suggested_direction": "Use public test evidence to fix the boundary while preserving regression behavior.",
+      "confidence": 1.0,
+      "source_trace_ids": [
+        "event-0030",
+        "event-0033",
+        "event-0038"
+      ]
+    },
+    "alternative": {
+      "action": "validate_stripped_name_then_return_it",
+      "approach": "validate_stripped_name_then_return_it",
+      "files": [
+        "src/parser.py"
+      ],
+      "validation": [
+        "python -m unittest tests.test_parser.EmptyNameTests",
+        "python -m unittest tests.test_parser.ValidNameTests"
+      ]
+    }
+  },
+  "evaluation": {},
+  "schema_version": "run-manifest/v1"
+}
